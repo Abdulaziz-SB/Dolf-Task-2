@@ -14,6 +14,10 @@ module.exports = {
       },
       fontFamily: {
         body: ['Montserrat']
+      },
+      spacing: {
+        98: '38rem',
+        99: '656px'
       }
     },
   },

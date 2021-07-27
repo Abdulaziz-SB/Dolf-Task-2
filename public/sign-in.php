@@ -9,7 +9,7 @@
 </head>
 <body>
     <main class='h-screen w-full flex flex-col items-center justify-center'>
-        <div class='w-1/2'>
+        <div class='w-full lg:w-1/2'>
             <!-- title -->
             <div class='mb-10'>
                 <h1 class='text-7xl h-24 text-center'><span class='text-primary-500'>Clip</span>aro</h1>
@@ -33,7 +33,6 @@
                 <input type="submit" value='Sign in' class='w-1/2 h-12 bg-primary-500 uppercase text-xl text-white font-body cursor-pointer mb-5'>
                 <p class='text-gray-500 text-center mt-4'>Don't have an account? <a href="./sign-up.php" class='underline text-gray-500 hover:text-gray-900'>sign up</a></p>
             </div>
-
         </div>
     </main>
 

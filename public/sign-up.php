@@ -8,11 +8,12 @@
     <title>Cliparo</title>
 </head>
 <body>
-<main class='h-screen flex flex-row'>
-        <div class='h-full w-1/4 bg-primary-200 flex items-center p-8'>
-            <div>
-                <h1 class='font-body text-4xl font-light p-14'>Start joining sports events</h1>
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="436.534" height="341.25" viewBox="0 0 436.534 341.25">
+    <main class='h-screen flex flex-row'>
+    <!-- side bar -->
+        <div class='h-full w-1/3 bg-primary-200 items-center hidden lg:flex'>
+            <div class='w-full'>
+                <h1 class='font-body text-4xl font-light p-4 w-full mb-7    '>Start joining sports events</h1>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="436.534" height="341.25" viewBox="0 0 436.534 341.25" class='h-80 w-full'>
                 <defs>
                     <linearGradient id="linear-gradient" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
                     <stop offset="0" stop-color="gray" stop-opacity="0.251"/>
@@ -111,7 +112,7 @@
                     <path id="Path_83" data-name="Path 83" d="M123.748,93.039,79.22,137.918v10.627L129.751,91.1Z" transform="translate(-44.859 -51.58)" fill="#fff" opacity="0.3"/>
                     <path id="Path_84" data-name="Path 84" d="M139.115,82.709l-59.9,75.87v11.247L154.057,80.48Z" transform="translate(-44.859 -45.566)" fill="#fff" opacity="0.3"/>
                 </g>
-                </svg>
+            </svg>
             </div>
         </div>
         <div class='h-full w-full p-10 flex flex-col items-center content-around'>
@@ -119,8 +120,8 @@
                 <h1 class='font-body text-7xl font-medium text-center my-12'><span class='text-primary-500'>Clip</span>aro</h1>
                 <h2 class='font-body text-4xl font-light text-center mb-10'>Join us</h2>
             </div>
-            <div class='w-full flex flex-col items-center p-10'>
-                <form action="#" class='w-1/2'>
+            <div class='w-full flex flex-col items-center p-5 md:p-10'>
+                <form action="#" class='w-full md:w-1/2'>
                     <div class='mb-6'>
                         <h3 class='font-body mb-3 text-light text-gray-600'>Username</h3>
                         <input type="text" name='username' class='w-full h-14 rounded bg-gray-100 border border-gray-300'>
