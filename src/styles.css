@@ -4,10 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.img-height{
-    height: 38rem;
-}
-.basket{
-    height: 656px;
-    max-height: 600px;
+@layer components {
+    .card{
+        @apply bg-white rounded overflow-hidden shadow-md relative;
+    }
 }

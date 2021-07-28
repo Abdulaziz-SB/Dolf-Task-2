@@ -35,6 +35,18 @@
             </div>
         </div>
     </main>
-
+    <!-- <div class='mt-8 grid lg:grid-cols-3 gap-10 mb-12'>
+            Cards go here
+            <div class='card hover:shadow-lg'>
+                <img src="./res/img/ball.jpg" alt="" class='h-32 w-full sm:h-48 object-cover'>
+                <div class='m-4'>
+                    <span class='font-bold'>5 Bean chilli</span>
+                    <span class='block text-gray-500 text-sm'>Recipe by mario</span>
+                </div>
+                <div class='text-gray-500 text-xs uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2'>
+                    <svg class="w-6 h-6 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>25 min</span>
+                </div>
+        </div> -->
 </body>
 </html>

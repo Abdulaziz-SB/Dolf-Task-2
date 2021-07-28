@@ -624,6 +624,16 @@ video {
   }
 }
 
+.card{
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .sr-only{
   position: absolute;
   width: 1px;
@@ -33642,15 +33652,6 @@ video {
 
 .content-none{
   content: none;
-}
-
-.img-height{
-  height: 38rem;
-}
-
-.basket{
-  height: 656px;
-  max-height: 600px;
 }
 
 @media (min-width: 640px){
