@@ -10,6 +10,10 @@ module.exports = {
           300: '#FEDFA6',
           400: '#B2CEC9',
           500: '#EC894F',
+        },
+        primaryHover: {
+          100: '#9EC4BD',
+          200: '#98B7B1'
         }
       },
       fontFamily: {

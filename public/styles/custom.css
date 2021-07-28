@@ -1,3 +1,6 @@
 .bask{
     height: 32rem;
 }
+.social-icons:hover{
+    transform: translateY(-10px);
+}

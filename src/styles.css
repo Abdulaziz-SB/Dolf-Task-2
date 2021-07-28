@@ -9,3 +9,7 @@
         @apply bg-white rounded overflow-hidden shadow-md relative;
     }
 }
+.card:hover{
+    transform: translateY(-20px);
+    transition: transform 0.3s ease-in-out;
+}
