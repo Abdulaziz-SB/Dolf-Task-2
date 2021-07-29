@@ -84,7 +84,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#FBC8BA" fill-opacity="1" d="M0,128L48,122.7C96,117,192,107,288,122.7C384,139,480,181,576,192C672,203,768,181,864,165.3C960,149,1056,139,1152,133.3C1248,128,1344,128,1392,128L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
         </div> -->
         <!-- view all events section -->
-        <section class='h-80 pl-28 pt-10 bg-primary-100 flex justify-between items-center'>
+        <section class='h-80 pl-28 pt-10 bg-primary-100 flex justify-around items-center'>
             <div>
                 <h1 class='text-3xl font-medium mb-7'>View all Events</h1>
                 <p class='text-2xl text-gray-600 font-light mb-6'>Search your favourite event</p>
@@ -199,25 +199,6 @@
             </div>
         </section>
     </main>
-    <footer class='h-56 bg-gray-400 p-10'>
-        <div class='mb-12'>
-            <ul class='flex justify-evenly w-full'>
-                <li class='text-xl'><a href="#">Contact</a></li>
-                <li class='text-xl'><a href="#">FAQ</a></li>
-                <li class='text-xl'><a href="#">About</a></li>
-                <li class='text-xl'><a href="#">Terms & Privacy</a></li>
-                <div class='flex justify-around'>
-                    <!-- icon container -->
-                <div class='flex justify-between gap-10'>
-                    <div class='social-icons h-7 w-7 rounded-full bg-white p-3 flex justify-center items-center'><a href=#><i class="fab fa-twitter"></i></a></div>
-                    <div class='social-icons h-7 w-7 rounded-full bg-white p-3 flex justify-center items-center'><a href="#"><i class="fab fa-facebook"></i></a></div>
-                    <div class='social-icons h-7 w-7 rounded-full bg-white p-3 flex justify-center items-center'><a href="#"><i class="fab fa-instagram"></i></a></div>
-                    <div class='social-icons h-7 w-7 rounded-full bg-white p-3 flex justify-center items-center'><a href="#"><i class="fab fa-youtube"></i></a></div>
-                </div>
-            </div>
-            </ul>
-        </div>
-        <div><p class='text-gray-600 font-lighter text-center'>Copyright	&copy; 2021 Cliparo. All right reserved</p></div>
-    </footer>
+    <?php include('./footer.php')?>
 </body>
 </html>

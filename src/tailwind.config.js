@@ -20,8 +20,10 @@ module.exports = {
         body: ['Montserrat']
       },
       spacing: {
-        98: '38rem',
-        99: '656px'
+        '98': '26rem',
+        '99': '28rem',
+        '100': '30rem',
+        '101': '32rem'
       }
     },
   },
