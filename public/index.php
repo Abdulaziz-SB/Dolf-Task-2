@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
     <title>Cliparo</title>
 </head>
-<body class='h-full font-body'>
+<body class='h-full font-body bg-gray-100'>
     <?php include('./header.php')?>
-    <main class='h-full w-full bg-gray-100'>
+    <main class='h-full w-full bg-gray-100 mb-24'>
         <!-- img -->
         <div class='bask bg-gray-700'>
             <!-- img 656px -->
@@ -26,58 +26,66 @@
             </div>
             <!-- Cards -->
             <div class='grid grid-cols-4 gap-10 mb-6'>
-                <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
-                    <img src="./res/img/ball.jpg" alt="couldn't load image" class='w-full object-cover'>
-                    <div class='m-4'>
-                        <h2 class='mb-2 font-medium'>Football</h2>
-                        <h2 class='mb-2 font-medium'>Roberto luis</h2>
-                        <h2 class='mb-2 font-medium'>56 registered</h2>
-                        <h2 class='font-light'>9:00pm - 10:00pm 21/9/2021</h2>
+                <a href="./event-detail.php">
+                    <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
+                        <img src="./res/img/ball.jpg" alt="couldn't load image" class='w-full object-cover'>
+                        <div class='m-4'>
+                            <h2 class='mb-2 font-medium'>Football</h2>
+                            <h2 class='mb-2 font-medium'>Roberto luis</h2>
+                            <h2 class='mb-2 font-medium'>56 registered</h2>
+                            <h2 class='font-light'>9:00pm - 10:00pm 21/9/2021</h2>
+                        </div>
+                        <div class='bg-primary-300 text-gray-700 text-xs uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2'>
+                            <svg class="w-6 h-6 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                            <span>75 SR</span>
+                        </div>
                     </div>
-                    <div class='bg-primary-300 text-gray-700 text-xs uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2'>
-                        <svg class="w-6 h-6 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        <span>75 SR</span>
+                </a>
+                <a href="./event-detail.php">
+                    <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
+                        <img src="./res/img/basket.jpg" alt="couldn't load image" class='w-full object-cover'>
+                        <div class='m-4'>
+                            <h2 class='mb-2 font-medium'>Basketball</h2>
+                            <h2 class='mb-2 font-medium'>Luis</h2>
+                            <h2 class='mb-2 font-medium'>36 registered</h2>
+                            <h2 class='font-light'>10:00pm - 12:00pm 21/9/2021</h2>
+                        </div>
+                        <div class='bg-primary-300 text-gray-700 text-xs uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2'>
+                            <svg class="w-6 h-6 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                            <span>50 SR</span>
+                        </div>
                     </div>
-                </div>
-                <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
-                    <img src="./res/img/basket.jpg" alt="couldn't load image" class='w-full object-cover'>
-                    <div class='m-4'>
-                        <h2 class='mb-2 font-medium'>Basketball</h2>
-                        <h2 class='mb-2 font-medium'>Luis</h2>
-                        <h2 class='mb-2 font-medium'>36 registered</h2>
-                        <h2 class='font-light'>10:00pm - 12:00pm 21/9/2021</h2>
+                </a>
+                <a href="./event-detail.php">
+                    <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
+                        <img src="./res/img/ba.jpg" alt="couldn't load image" class='w-full object-cover'>
+                        <div class='m-4'>
+                            <h2 class='mb-2 font-medium'>Football</h2>
+                            <h2 class='mb-2 font-medium'>Roberto sanchez</h2>
+                            <h2 class='mb-2 font-medium'>46 registered</h2>
+                            <h2 class='font-light'>9:00pm - 10:00pm 27/9/2021</h2>
+                        </div>
+                        <div class='bg-primary-300 text-gray-700 text-xs uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2'>
+                            <svg class="w-6 h-6 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                            <span>125 SR</span>
+                        </div>
                     </div>
-                    <div class='bg-primary-300 text-gray-700 text-xs uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2'>
-                        <svg class="w-6 h-6 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        <span>50 SR</span>
+                </a>
+                <a href="./event-detail.php">
+                    <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
+                        <img src="./res/img/football-cover.jpg" alt="couldn't load image" class='w-full object-cover'>
+                        <div class='m-4'>
+                            <h2 class='mb-2 font-medium'>Football</h2>
+                            <h2 class='mb-2 font-medium'>luis silva</h2>
+                            <h2 class='mb-2 font-medium'>90 registered</h2>
+                            <h2 class='font-light'>7:00pm - 9:00pm 12/9/2021</h2>
+                        </div>
+                        <div class='bg-primary-300 text-gray-700 text-xs uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2'>
+                            <svg class="w-6 h-6 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                            <span>25 SR</span>
+                        </div>
                     </div>
-                </div>
-                <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
-                    <img src="./res/img/ba.jpg" alt="couldn't load image" class='w-full object-cover'>
-                    <div class='m-4'>
-                        <h2 class='mb-2 font-medium'>Football</h2>
-                        <h2 class='mb-2 font-medium'>Roberto sanchez</h2>
-                        <h2 class='mb-2 font-medium'>46 registered</h2>
-                        <h2 class='font-light'>9:00pm - 10:00pm 27/9/2021</h2>
-                    </div>
-                    <div class='bg-primary-300 text-gray-700 text-xs uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2'>
-                        <svg class="w-6 h-6 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        <span>125 SR</span>
-                    </div>
-                </div>
-                <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
-                    <img src="./res/img/football-cover.jpg" alt="couldn't load image" class='w-full object-cover'>
-                    <div class='m-4'>
-                        <h2 class='mb-2 font-medium'>Football</h2>
-                        <h2 class='mb-2 font-medium'>luis silva</h2>
-                        <h2 class='mb-2 font-medium'>90 registered</h2>
-                        <h2 class='font-light'>7:00pm - 9:00pm 12/9/2021</h2>
-                    </div>
-                    <div class='bg-primary-300 text-gray-700 text-xs uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2'>
-                        <svg class="w-6 h-6 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        <span>25 SR</span>
-                    </div>
-                </div>
+                </a>
             </div>
         </section>
         <!-- <div class='w-full h-80'>
@@ -198,6 +206,10 @@
                 </div>
             </div>
         </section>
+        <div class='h-72 w-full bg-primary-300 flex flex-col items-center justify-center mb-20'>
+            <h1 class='text-gray-600 text-2xl font-normal mb-10'>Want to stay athletic, healthy, join our events that are monitored by professional trainers</h1>
+            <a href="./sign-in.php" class='inline-block h-auto w-full text-center'><button class='bg-white tracking-wider rounded-full h-14 w-2/6 text-3xl font-medium hover:border-gray-400 text-gray-400 border-2 border-primary-400'>Get Started</button></a>
+        </div>
     </main>
     <?php include('./footer.php')?>
 </body>

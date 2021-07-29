@@ -12,7 +12,7 @@
         <div class='w-full lg:w-1/2'>
             <!-- title -->
             <div class='mb-10'>
-                <h1 class='text-7xl h-24 text-center'><span class='text-primary-500'>Clip</span>aro</h1>
+                <a href="./index.php"><h1 class='text-7xl h-24 text-center'><span class='text-primary-500'>Clip</span>aro</h1></a>
                 <h3 class='text-gray-600 text-center text-xl'>Welcome back</h3>
             </div>
             <!-- form -->

@@ -10,6 +10,8 @@ module.exports = {
           300: '#FEDFA6',
           400: '#B2CEC9',
           500: '#EC894F',
+          600: '#FFDFC5',
+          550: '#FFDFC5'
         },
         primaryHover: {
           100: '#9EC4BD',
