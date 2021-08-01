@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
     <title>Event Detail</title>
 </head>
 <body>
+    <div id='pageOverlay' class='absolute w-full h-full bg-gray-900 opacity-20 z-30 hidden'></div>
     <?php include('./header.php')?>
-    <div class='h-96 relative overflow-hidden flex mb-20'>
+    <!-- event name-img -->
+    <div id ='eventUpperContainer' class='h-96 relative overflow-hidden flex mb-20'>
         <div class='bg-primary-100 h-64 absolute w-full'></div>
         <!-- event image left-44 top-6 -->
         <div class='z-20 h-96 w-1/4 mt-10 ml-48'>
@@ -19,7 +22,7 @@
         <div class='z-20 ml-24 mt-10'>
             <h2 class='font-light text-3xl text-gray-500 mb-5'>Event</h2>
             <h1 class='text-5xl text-primary-500 mb-7'>Football</h1>
-            <button class='bg-primary-400 rounded-full h-14 w-64 text-xl hover:bg-primaryHover-200'>Register</button>
+            <button id='registerEventBtn' class='bg-primary-400 rounded-full h-14 w-64 text-xl hover:bg-primaryHover-200' onclick='RegisterEvent()'>Register</button>
         </div>
         <!-- blob shape -->
         <div>
@@ -35,8 +38,8 @@
             </div>
         </div>
     </div>
-    <main class='w-10/12 m-auto'>
-        <!-- Event info -->
+    <main id = 'mainContainer' class='w-10/12 m-auto'>
+        <!-- Event description -->
         <div class='h-20 w-full'>
             <ul class='flex justify-between w-full items-center'>
                 <li class='text-gray-600 text-xl'>
@@ -85,6 +88,9 @@
         <!-- Google Map -->
         <section></section>
     </main>
+    <!-- Event Preview -->
+    <?php include('./event-preview.php')?>
+    <script defer src="./script/event-detail/index.js"></script>
     <?php include('./footer.php')?>
 </body>
 </html>
