@@ -90,8 +90,8 @@
     </main>
     <!-- Event Preview -->
     <?php include('./event-preview.php')?>
-    <script defer src="./script/event-detail/index.js"></script>
     <script defer src="./script/event-detail/checkout-preview.js"></script>
+    <script defer src="./script/event-detail/index.js"></script>
     <?php include('./footer.php')?>
 </body>
 </html>

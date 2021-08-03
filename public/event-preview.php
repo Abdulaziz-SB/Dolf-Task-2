@@ -1,6 +1,6 @@
-<section id='eventOverviewContainer' class='w-2/3 h-2/3 bg-white shadow-lg absolute top-40 right-64 z-30 rounded'>
+<section id='eventOverviewContainer' class='w-2/3 h-2/3 bg-white shadow-lg absolute top-40 right-64 z-30 rounded hidden'>
     <!-- Overview inline-block --> 
-    <div class='w-full h-full hidden'>
+    <div id='previewContainer' class='w-full h-full inline-block'>
         <div class='flex w-full'>
             <img src="./res/img/ba.jpg" alt="couldn't load image" class='w-5/12 h-3/6 object-cover rounded-tl'>
             <div class='w-full'>
@@ -19,11 +19,11 @@
         <div class='w-full h-1 mt-14 m-auto bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200'></div>
         <!-- register button -->
         <div class='mt-10 w-full text-center'>
-        <button id='registerOverviewBtn' class='bg-primary-400 m-auto rounded-full h-14 w-80 text-xl hover:bg-primaryHover-200'>Register</button>
+        <button id='registerOverviewBtn' class='bg-primary-400 m-auto rounded-full h-14 w-80 text-xl hover:bg-primaryHover-200' onclick='ShowCheckoutContainer()'>Register</button>
         </div>
     </div>
     <!-- checkout -->
-    <div class='w-full h-full inline-block'>
+    <div id='checkoutContainer' class='w-full h-full hidden'>
         <div>
         <h1 class='text-5xl text-center w-11/12 mt-2 inline-block'><span class='text-primary-500'>Clip</span>aro</h1>
         <div class='absolute right-5 top-5 h-full inline-block'><i id='closeOverview' class="far fa-times-circle transform scale-150 text-gray-600 hover:text-gray-900 cursor-pointer" onclick='CloseOverview()'></i></div>
@@ -46,11 +46,11 @@
                         </div>
                     </div>
                     <div class='w-full h-1 my-3 bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200'></div>
-                    <div class='pl-4 mt-2 mb-8'><input id='paypalRadio' type="radio" name='payment' onclick='PaypalRadio()'><span class='text-xl ml-2'>PayPal</span><span class='text-gray-600 ml-4'><i class="fab fa-paypal"></i></span></div>
+                    <div class='pl-4 mt-2 mb-6'><input id='paypalRadio' type="radio" name='payment' onclick='PaypalRadio()'><span class='text-xl ml-2'>PayPal</span><span class='text-gray-600 ml-4'><i class="fab fa-paypal"></i></span></div>
                     <!-- paypal inputs -->
-                    <div id='paypalInputContainer' class='w-full h-auto p-3 px-11 hidden'>
-                        <p class='text-gray-800 text-xl mb-6 '>Sign into your paypal account to complete purchase.</p>
-                        <div class='text-center'><a data-toggle="tab" href='https://www.paypal.com'><button class='bg-blue-600 m-auto rounded-full h-8 w-64 hover:bg-blue-800 text-white'>PayPal</button></a></div>
+                    <div id='paypalInputContainer' class='w-full h-auto p-1 px-11 hidden'>
+                        <p class='text-gray-800 text-xl mb-4 '>Sign into your paypal account to complete purchase.</p>
+                        <div class='text-center'><a href='https://www.paypal.com/sa/signin' target='_blank'><div class='bg-blue-600 m-auto rounded-full h-8 w-64 hover:bg-blue-800 text-white'>PayPal</div></a></div>
                     </div>
                 </form>
             </div>

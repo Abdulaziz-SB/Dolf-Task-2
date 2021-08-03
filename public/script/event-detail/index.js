@@ -9,4 +9,7 @@ const CloseOverview =() =>{
 const RegisterEvent = () => {
     document.getElementById('eventOverviewContainer').style.display = 'block';
     document.getElementById('pageOverlay').style.display = 'block';
+    ShowPreviewContainer();
+    // PaypalRadio();
+    // CreditRadio();
 }
