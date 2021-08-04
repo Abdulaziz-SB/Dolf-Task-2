@@ -19,7 +19,7 @@
         <div class='w-full h-1 mt-14 m-auto bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200'></div>
         <!-- register button -->
         <div class='mt-10 w-full text-center'>
-        <button id='registerOverviewBtn' class='bg-primary-400 m-auto rounded-full h-14 w-80 text-xl hover:bg-primaryHover-200' onclick='ShowCheckoutContainer()'>Register</button>
+        <button id='registerOverviewBtn' class='bg-primary-400 m-auto rounded-full h-14 w-80 text-xl hover:bg-primaryHover-200' onclick='ShowCheckoutContainer()'>Proceed to checkout</button>
         </div>
     </div>
     <!-- checkout -->
@@ -31,7 +31,7 @@
         <!-- seperator -->
         <div class='w-full h-1 mt-8 m-auto bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200'></div>
         <!-- checkout container -->
-        <div class='h-3/4 w-full flex justify-center items-center flex-col'>
+        <div class='h-98 w-full flex justify-center items-center flex-col'>
             <div class='w-full text-center'><h2 class='text-2xl text-gray-600'>Payment method</h2></div>
             <div class='border-2 w-9/12 h-auto max-h-4/5 mt-5'>
                 <form action="#" class='w-full h-full flex items-start justify-start flex-col'>
@@ -50,7 +50,7 @@
                     <!-- paypal inputs -->
                     <div id='paypalInputContainer' class='w-full h-auto p-1 px-11 hidden'>
                         <p class='text-gray-800 text-xl mb-4 '>Sign into your paypal account to complete purchase.</p>
-                        <div class='text-center'><a href='https://www.paypal.com/sa/signin' target='_blank'><div class='bg-blue-600 m-auto rounded-full h-8 w-64 hover:bg-blue-800 text-white'>PayPal</div></a></div>
+                        <div class='text-center'><a href='https://www.paypal.com/sa/signin' target='_blank'><div class='bg-blue-600 m-auto rounded-full h-8 w-64 hover:bg-blue-800 text-white mb-4 p-1'>PayPal</div></a></div>
                     </div>
                 </form>
             </div>
