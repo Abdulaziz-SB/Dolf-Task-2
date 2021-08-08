@@ -20,10 +20,10 @@
         <!-- side bar -->
         <section class='hidden h-screen w-1/6 bg-blue-800 md:block'>
             <ul class='h-1/2 w-full flex flex-col justify-around items-start p-5 mt-10'>
-               <a href="#" id='dashboardIcon' onclick='NavigateSideBar(event)'><li class='text-2xl text-blue-300 w-full h-auto p-2'><span class='mr-2'><i class="fas fa-home"></i></span>Dashboard</li></a>
-               <a href="#" id='eventIcon' onclick='NavigateSideBar(event)'><li class='text-2xl text-white'><span class='mr-2'><i class="fas fa-star"></i></span>Events</li></a>
-               <a href="#"><li class='text-2xl text-white'><span class='mr-2'><i class="fas fa-chart-line"></i></span>Activity</li></a>
-               <a href="#"><li class='text-2xl text-white'><span class='mr-2'><i class="fas fa-user"></i></span>Profile</li></a>
+               <a href="#" id='dashboardIcon' onclick='NavigateSideBar(event)'><li class='text-2xl text-white w-full h-auto sidebar-item sidebar-item hover:text-blue-100'><span class='mr-2'><i class="fas fa-home"></i></span>Dashboard</li></a>
+               <a href="#" id='eventIcon' onclick='NavigateSideBar(event)'><li class='text-2xl text-white sidebar-item hover:text-blue-100'><span class='mr-2'><i class="fas fa-star"></i></span>Events</li></a>
+               <a href="#"><li class='text-2xl text-white sidebar-item'><span class='mr-2'><i class="fas fa-chart-line"></i></span>Activity</li></a>
+               <a href="#"><li class='text-2xl text-white sidebar-item'><span class='mr-2'><i class="fas fa-user"></i></span>Profile</li></a>
             </ul>
         </section>
         <!-- main -->
