@@ -34,6 +34,12 @@ class UserContr extends User{
             flash('register', 'password is to short!!');
             redirect('../pages/common/sign-up.php');
         }
+        // check radio button
+        if($data['userType'] == 'Customer'){
+            $data['userType'] = (string)0;
+        }else{
+            $data['userType'] = (string)1;
+        }
 
         // users with the same email or username already exists
         if($this->userModel->FindUserByEmailOrUsername($data['username'], $data['email'])){
@@ -52,6 +58,18 @@ class UserContr extends User{
             die('Something went wrong');
         }
     }
+    public function login() {
+        // sanitize POST data
+        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+        // init data
+        $data = [
+            'name/email' => trim($_POST['name/email']),
+            'pwd' => trim($_POST['pwd'])
+        ];
+
+        //
+    }
 }
 
 $init = new UserContr;
@@ -61,6 +79,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     switch($_POST['type']){ 
         case 'register':
             $init->register();
+            break;
+        case 'login':
+            $init->login();
             break;
     }
 }

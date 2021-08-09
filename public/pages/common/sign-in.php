@@ -1,3 +1,4 @@
+<?php require_once '../../helpers/session_helper.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,10 +18,13 @@
             </div>
             <!-- form -->
             <div class='w-full flex items-center justify-center'>
-                <form action="#" class='w-1/2'>
+                <?php flash('login');?>
+
+                <form action="../../classes/usercontr.class.php" method='post' class='w-1/2'>
+                    <input type='hidden' name='type' value='login'>
                     <div class='mb-6'>
-                        <h3 class='font-body mb-3 text-light text-gray-600'>Email</h3>
-                        <input type="text" name='email' class='w-full h-14 rounded bg-gray-100 border border-gray-300'>
+                        <h3 class='font-body mb-3 text-light text-gray-600'>Username or Email</h3>
+                        <input type="text" name='name/email' class='w-full h-14 rounded bg-gray-100 border border-gray-300'>
                     </div>
                     <div class='mb-6'>
                         <h3 class='font-body mb-3 text-light text-gray-600'>Password</h3>

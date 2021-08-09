@@ -140,11 +140,11 @@
                     <!-- radio button -->
                     <div class='mb-6 flex justify-around my-5'>
                         <div>
-                            <input type="radio" name='userType'>
+                            <input type="radio" name='userType' value='Customer'>
                             <label for="html" class='text-xl text-gray-800'>Customer</label>
                         </div>
                         <div>
-                            <input type="radio" name='userType'>
+                            <input type="radio" name='userType' value='Organizer'>
                             <label for="html" class='text-xl text-gray-800'>Organizer</label>
                         </div>
                     </div>
