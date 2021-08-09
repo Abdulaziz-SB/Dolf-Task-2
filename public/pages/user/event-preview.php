@@ -2,7 +2,7 @@
     <!-- Overview inline-block --> 
     <div id='previewContainer' class='w-full h-full inline-block'>
         <div class='flex w-full'>
-            <img src="./res/img/ba.jpg" alt="couldn't load image" class='w-5/12 h-3/6 object-cover rounded-tl'>
+            <img src="../../res/img/ba.jpg" alt="couldn't load image" class='w-5/12 h-3/6 object-cover rounded-tl'>
             <div class='w-full'>
                 <h1 class='text-4xl text-center w-11/12 mt-2 inline-block'><span class='text-primary-500'>Clip</span>aro</h1>
                 <span><i id='closeOverview' class="far fa-times-circle transform scale-150 text-gray-600 hover:text-gray-900 cursor-pointer" onclick='CloseOverview()'></i></span>

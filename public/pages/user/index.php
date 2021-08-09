@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/custom.css">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="../../styles/custom.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
     <title>Cliparo</title>
 </head>
 <body class='h-full font-body bg-gray-100'>
-    <?php include('./header.php')?>
+    <?php include('../common/header.php')?>
     <main class='h-full w-full bg-gray-100 mb-24'>
         <!-- img -->
         <div class='bask bg-gray-700'>
             <!-- img 656px -->
             <div class='h-full w-full'>
-                <img src="./res/img/basket.jpg" alt="couldn't load image" class='h-full w-full object-cover'>
+                <img src="../../res/img/basket.jpg" alt="couldn't load image" class='h-full w-full object-cover'>
             </div>
         </div>
         <!-- event section -->
@@ -28,7 +28,7 @@
             <div class='grid grid-cols-4 gap-10 mb-6'>
                 <a href="./event-detail.php">
                     <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
-                        <img src="./res/img/ball.jpg" alt="couldn't load image" class='w-full object-cover'>
+                        <img src="../../res/img/ball.jpg" alt="couldn't load image" class='w-full object-cover'>
                         <div class='m-4'>
                             <h2 class='mb-2 font-medium'>Football</h2>
                             <h2 class='mb-2 font-medium'>Roberto luis</h2>
@@ -43,7 +43,7 @@
                 </a>
                 <a href="./event-detail.php">
                     <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
-                        <img src="./res/img/basket.jpg" alt="couldn't load image" class='w-full object-cover'>
+                        <img src="../../res/img/basket.jpg" alt="couldn't load image" class='w-full object-cover'>
                         <div class='m-4'>
                             <h2 class='mb-2 font-medium'>Basketball</h2>
                             <h2 class='mb-2 font-medium'>Luis</h2>
@@ -58,7 +58,7 @@
                 </a>
                 <a href="./event-detail.php">
                     <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
-                        <img src="./res/img/ba.jpg" alt="couldn't load image" class='w-full object-cover'>
+                        <img src="../../res/img/ba.jpg" alt="couldn't load image" class='w-full object-cover'>
                         <div class='m-4'>
                             <h2 class='mb-2 font-medium'>Football</h2>
                             <h2 class='mb-2 font-medium'>Roberto sanchez</h2>
@@ -73,7 +73,7 @@
                 </a>
                 <a href="./event-detail.php">
                     <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
-                        <img src="./res/img/football-cover.jpg" alt="couldn't load image" class='w-full object-cover'>
+                        <img src="../../res/img/football-cover.jpg" alt="couldn't load image" class='w-full object-cover'>
                         <div class='m-4'>
                             <h2 class='mb-2 font-medium'>Football</h2>
                             <h2 class='mb-2 font-medium'>luis silva</h2>
@@ -153,7 +153,7 @@
             <!-- Cards -->
             <div class='grid grid-cols-4 gap-10 mb-6'>
                 <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
-                    <img src="./res/img/ball.jpg" alt="couldn't load image" class='w-full object-cover'>
+                    <img src="../../res/img/ball.jpg" alt="couldn't load image" class='w-full object-cover'>
                     <div class='m-4'>
                         <h2 class='mb-2 font-medium'>Football</h2>
                         <h2 class='mb-2 font-medium'>Roberto luis</h2>
@@ -166,7 +166,7 @@
                     </div>
                 </div>
                 <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
-                    <img src="./res/img/basket.jpg" alt="couldn't load image" class='w-full object-cover'>
+                    <img src="../../res/img/basket.jpg" alt="couldn't load image" class='w-full object-cover'>
                     <div class='m-4'>
                         <h2 class='mb-2 font-medium'>Basketball</h2>
                         <h2 class='mb-2 font-medium'>Luis</h2>
@@ -179,7 +179,7 @@
                     </div>
                 </div>
                 <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
-                    <img src="./res/img/ba.jpg" alt="couldn't load image" class='w-full object-cover'>
+                    <img src="../../res/img/ba.jpg" alt="couldn't load image" class='w-full object-cover'>
                     <div class='m-4'>
                         <h2 class='mb-2 font-medium'>Football</h2>
                         <h2 class='mb-2 font-medium'>Roberto sanchez</h2>
@@ -192,7 +192,7 @@
                     </div>
                 </div>
                 <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
-                    <img src="./res/img/football-cover.jpg" alt="couldn't load image" class='w-full object-cover'>
+                    <img src="../../res/img/football-cover.jpg" alt="couldn't load image" class='w-full object-cover'>
                     <div class='m-4'>
                         <h2 class='mb-2 font-medium'>Football</h2>
                         <h2 class='mb-2 font-medium'>luis silva</h2>
@@ -208,9 +208,9 @@
         </section>
         <div class='h-72 w-full bg-primary-300 flex flex-col items-center justify-center mb-20'>
             <h1 class='text-gray-600 text-2xl font-normal mb-10'>Want to stay athletic, healthy, join our events that are monitored by professional trainers</h1>
-            <a href="./sign-in.php" class='inline-block h-auto w-full text-center'><button class='bg-white tracking-wider rounded-full h-14 w-2/6 text-3xl font-medium hover:border-gray-400 text-gray-400 border-2 border-primary-400'>Get Started</button></a>
+            <a href="../common/sign-in.php" class='inline-block h-auto w-full text-center'><button class='bg-white tracking-wider rounded-full h-14 w-2/6 text-3xl font-medium hover:border-gray-400 text-gray-400 border-2 border-primary-400'>Get Started</button></a>
         </div>
     </main>
-    <?php include('./footer.php')?>
+    <?php include_once('../common/footer.php')?>
 </body>
 </html>

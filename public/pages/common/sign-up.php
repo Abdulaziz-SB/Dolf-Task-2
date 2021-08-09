@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="../../styles/style.css">
     <title>Cliparo | Sign-up</title>
 </head>
 <body>
+    <?php include_once('../../helpers/session_helper.php'); ?>
     <main class='h-screen flex flex-row'>
     <!-- side bar -->
         <div class='h-full w-1/3 bg-primary-200 items-center hidden lg:flex'>
@@ -121,7 +122,9 @@
                 <h2 class='font-body text-4xl font-light text-center mb-10'>Join us</h2>
             </div>
             <div class='w-full flex flex-col items-center p-5 md:p-10'>
-                <form action="#" class='w-full md:w-1/2'>
+                <form action="../../classes/usercontr.class.php" class='w-full md:w-1/2' method="POST">
+                    <?php flash('register'); ?>
+                    <input type="hidden" name='type' value='register'>
                     <div class='mb-6'>
                         <h3 class='font-body mb-3 text-light text-gray-600'>Username</h3>
                         <input type="text" name='username' class='w-full h-14 rounded bg-gray-100 border border-gray-300'>
@@ -132,7 +135,7 @@
                     </div>
                     <div class='mb-6'>
                         <h3 class='font-body mb-3 text-light text-gray-600'>Password</h3>
-                        <input type="text" name='pwd' class='w-full h-14 rounded bg-gray-100 border border-gray-300'>
+                        <input type="password" name='pwd' class='w-full h-14 rounded bg-gray-100 border border-gray-300'>
                     </div>
                     <!-- radio button -->
                     <div class='mb-6 flex justify-around my-5'>

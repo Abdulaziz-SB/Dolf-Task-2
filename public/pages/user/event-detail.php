@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="../../styles/style.css">
     <!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"> -->
     <link
       rel="stylesheet"
@@ -17,13 +17,13 @@
 </head>
 <body>
     <div id='pageOverlay' class='absolute w-full h-full bg-gray-900 opacity-20 z-30 hidden'></div>
-    <?php include('./header.php')?>
+    <?php include('../common/header.php')?>
     <!-- event name-img -->
     <div id ='eventUpperContainer' class='h-96 relative overflow-hidden flex mb-20'>
         <div class='bg-primary-100 h-64 absolute w-full'></div>
         <!-- event image left-44 top-6 -->
         <div class='z-20 h-96 w-1/4 mt-10 ml-48'>
-            <img src="./res/img/ball.jpg" alt="couldn't load image" class='rounded-md'>
+            <img src="../../res/img/ball.jpg" alt="couldn't load image" class='rounded-md'>
         </div>
         <!-- title -->
         <div class='z-20 ml-24 mt-10'>
@@ -97,8 +97,8 @@
     </main>
     <!-- Event Preview -->
     <?php include('./event-preview.php')?>
-    <script defer src="./script/event-detail/index.js"></script>
-    <script defer src="./script/event-detail/checkout-preview.js"></script>
-    <?php include('./footer.php')?>
+    <script defer src="../../script/event-detail/index.js"></script>
+    <script defer src="../../script/event-detail/checkout-preview.js"></script>
+    <?php include('../common/footer.php')?>
 </body>
 </html>
