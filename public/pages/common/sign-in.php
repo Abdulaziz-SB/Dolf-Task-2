@@ -1,4 +1,4 @@
-<?php require_once '../../helpers/session_helper.php';?>
+<?php include_once('../../helpers/session_helper.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,24 +18,23 @@
             </div>
             <!-- form -->
             <div class='w-full flex items-center justify-center'>
-                <?php flash('login');?>
-
-                <form action="../../classes/usercontr.class.php" method='post' class='w-1/2'>
+                <form action="../../classes/usercontr.class.php" method='POST' class='w-1/2'>
+                    <?php flash('login');?>
                     <input type='hidden' name='type' value='login'>
                     <div class='mb-6'>
                         <h3 class='font-body mb-3 text-light text-gray-600'>Username or Email</h3>
-                        <input type="text" name='name/email' class='w-full h-14 rounded bg-gray-100 border border-gray-300'>
+                        <input type="text" name='name/email' required autocomplete='off' class='w-full h-14 rounded bg-gray-100 border border-gray-300'>
                     </div>
                     <div class='mb-6'>
                         <h3 class='font-body mb-3 text-light text-gray-600'>Password</h3>
-                        <input type="text" name='pwd' class='w-full h-14 rounded bg-gray-100 border border-gray-300'>
+                        <input type="password" name='pwd' required autocomplete='off' class='w-full h-14 rounded bg-gray-100 border border-gray-300'>
+                    </div>
+                    <!-- submit & sign up -->
+                    <div class='w-full mt-9 flex flex-col justify-center items-center'>
+                        <input type="submit" value='Sign in' class='w-full h-12 bg-primary-500 uppercase text-xl text-white font-body cursor-pointer mb-5'>
+                        <p class='text-gray-500 text-center mt-4'>Don't have an account? <a href="./sign-up.php" class='underline text-gray-500 hover:text-gray-900'>sign up</a></p>
                     </div>
                 </form>
-            </div>
-            <!-- submit & sign up -->
-            <div class='w-full mt-9 flex flex-col justify-center items-center'>
-                <input type="submit" value='Sign in' class='w-1/2 h-12 bg-primary-500 uppercase text-xl text-white font-body cursor-pointer mb-5'>
-                <p class='text-gray-500 text-center mt-4'>Don't have an account? <a href="./sign-up.php" class='underline text-gray-500 hover:text-gray-900'>sign up</a></p>
             </div>
         </div>
     </main>

@@ -68,8 +68,31 @@ class UserContr extends User{
             'pwd' => trim($_POST['pwd'])
         ];
 
-        //
+        // check for username and email
+        if($this->userModel->FindUserByEmailOrUsername($data['name/email'], $data['name/email'])){
+            echo '<script> window.alert("username"); </script>';
+
+            // user found
+            $loggedInUser = $this->userModel->loginUser($data['user/email'], $data['pwd']);
+            if($loggedInUser){
+                // create session
+                $this->CreateUserSession($loggedInUser);
+            }else{
+                flash('login', 'Password Incorrect');
+                redirect('../pages/common/sign-in.php');
+            }
+        }else{
+            flash('login', 'No user found');
+            redirect('../pages/common/sign-in.php');
+        }
     }
+
+    public function CreateUserSession($user){
+        $_SESSION['usersId'] = $user['id'];
+        $_SESSION['usersName'] = $user['username'];
+        $_SESSION['usersEmail'] = $user['email'];
+        redirect('../pages/user/index.php');
+    } 
 }
 
 $init = new UserContr;
