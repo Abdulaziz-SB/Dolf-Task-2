@@ -127,15 +127,15 @@
                     <input type="hidden" name='type' value='register'>
                     <div class='mb-6'>
                         <h3 class='font-body mb-3 text-light text-gray-600'>Username</h3>
-                        <input type="text" name='username' class='w-full h-14 rounded bg-gray-100 border border-gray-300'>
+                        <input type="text" name='username' autocomplete='off' class='w-full h-14 rounded bg-gray-100 border border-gray-300'>
                     </div>
                     <div class='mb-6'>
                         <h3 class='font-body mb-3 text-light text-gray-600'>Email</h3>
-                        <input type="text" name='email' class='w-full h-14 rounded bg-gray-100 border border-gray-300'>
+                        <input type="text" name='email' autocomplete='off' class='w-full h-14 rounded bg-gray-100 border border-gray-300'>
                     </div>
                     <div class='mb-6'>
                         <h3 class='font-body mb-3 text-light text-gray-600'>Password</h3>
-                        <input type="password" name='pwd' class='w-full h-14 rounded bg-gray-100 border border-gray-300'>
+                        <input type="password" name='pwd' autocomplete='off' class='w-full h-14 rounded bg-gray-100 border border-gray-300'>
                     </div>
                     <!-- radio button -->
                     <div class='mb-6 flex justify-around my-5'>

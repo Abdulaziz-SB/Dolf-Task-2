@@ -15,17 +15,16 @@ class User extends Dbh {
         $stmt = mysqli_stmt_init($this->db);
         if(!mysqli_stmt_prepare($stmt, $sql)){
             return false;
-        }else{
-            // sotre the result that we got from the database into $stmt
-            mysqli_stmt_bind_param($stmt, "ss", $username, $email);
-            mysqli_stmt_execute($stmt);
-            // mysqli_stmt_store_result($stmt);
-            $result = mysqli_stmt_get_result($stmt);
-            //check how many results we have inside $stmt
-            $resultCheck = mysqli_stmt_num_rows($stmt);
         }
+        // sotre the result that we got from the database into $stmt
+        mysqli_stmt_bind_param($stmt, "ss", $username, $email);
+        mysqli_stmt_execute($stmt);
+        // mysqli_stmt_store_result($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        //check how many results we have inside $stmt
+        $resultCheck = mysqli_stmt_num_rows($stmt);
         if ($resultCheck > 0 || $row = mysqli_fetch_assoc($result)) {
-            return $row['password'];
+            return $row;
         }else{
             return false;
         }
@@ -44,20 +43,11 @@ class User extends Dbh {
     // login user
     public function loginUser($nameOrEmail, $pwd){
         $row = $this->FindUserByEmailOrUsername($nameOrEmail, $nameOrEmail);
-        echo '<script>console.log("hee")</script>';
-        // echo $row['password'];
-
-        if($row == false){
-            echo '<script>console.log("hee")</script>';
-            // echo $row['password'];
-            return false;
-        }
-        // $hashedPassword = $row['password'];
-        $hashedPassword = $row;
+        
+        $hashedPassword = $row['password'];
         $passwordCheck = password_verify($pwd, $hashedPassword);
         if($passwordCheck == true){
-            echo '<script>console.log("hee")</script>';
-            return true;
+            return $row;
         }else if($passwordCheck == false){
             return false;
         }

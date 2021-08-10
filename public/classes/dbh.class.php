@@ -18,7 +18,7 @@ class Dbh {
     protected function connect(){
         $this->servername = 'localhost';
         $this->username = 'root';
-        $this->password = '';
+        $this->pwd = '';
         $this->dbname = 'cliparo';
 
         $conn = new mysqli($this->servername, $this->username, $this->pwd, $this->dbname);

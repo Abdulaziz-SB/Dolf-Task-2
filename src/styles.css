@@ -13,3 +13,6 @@
 .card:hover{
     transform: translateY(-20px);
 }
+.user-tab:hover{
+    display: block;
+}

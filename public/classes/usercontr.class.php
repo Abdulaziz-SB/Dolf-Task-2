@@ -30,7 +30,7 @@ class UserContr extends User{
             redirect('../pages/common/sign-up.php');
         }
         // check password length
-        if(strlen($data['pwd'] < 6)){
+        if((strlen((string)$data['pwd'])) < 6){
             flash('register', 'password is to short!!');
             redirect('../pages/common/sign-up.php');
         }
@@ -70,10 +70,8 @@ class UserContr extends User{
 
         // check for username and email
         if($this->userModel->FindUserByEmailOrUsername($data['name/email'], $data['name/email'])){
-            echo '<script> window.alert("username"); </script>';
-
             // user found
-            $loggedInUser = $this->userModel->loginUser($data['user/email'], $data['pwd']);
+            $loggedInUser = $this->userModel->loginUser($data['name/email'], $data['pwd']);
             if($loggedInUser){
                 // create session
                 $this->CreateUserSession($loggedInUser);
@@ -93,6 +91,13 @@ class UserContr extends User{
         $_SESSION['usersEmail'] = $user['email'];
         redirect('../pages/user/index.php');
     } 
+    public function logout(){
+        unset($_SESSION['usersId']);
+        unset($_SESSION['usersName']);
+        unset($_SESSION['usersEmail']);
+        session_destroy();
+        redirect('../pages/user/index.php');
+    }
 }
 
 $init = new UserContr;
@@ -106,5 +111,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         case 'login':
             $init->login();
             break;
+        default:
+            redirect('../pages/user/index.php');
+    }
+}else{
+    switch($_GET['q']){ 
+        case 'logout':
+            $init->logout();
+            break;
+        default:
+            redirect('../pages/user/index.php');
     }
 }

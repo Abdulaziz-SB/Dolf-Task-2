@@ -206,10 +206,12 @@
                 </div>
             </div>
         </section>
+        <?php if(!isset($_SESSION['usersId'])):?>
         <div class='h-72 w-full bg-primary-300 flex flex-col items-center justify-center mb-20'>
             <h1 class='text-gray-600 text-2xl font-normal mb-10'>Want to stay athletic, healthy, join our events that are monitored by professional trainers</h1>
             <a href="../common/sign-in.php" class='inline-block h-auto w-full text-center'><button class='bg-white tracking-wider rounded-full h-14 w-2/6 text-3xl font-medium hover:border-gray-400 text-gray-400 border-2 border-primary-400'>Get Started</button></a>
         </div>
+        <?php endif; ?>
     </main>
     <?php include_once('../common/footer.php')?>
 </body>
