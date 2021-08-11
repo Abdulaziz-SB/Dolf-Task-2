@@ -4,7 +4,7 @@
 <!-- header nav -->
 <header  class='h-auto'>
     <nav class='h-20 p-8 flex justify-between items-center'>
-        <li class='list-none text-2xl ml-10'><a href="./index.php"><span class='text-primary-500'>Clip</span>aro</a></li>
+        <li class='list-none text-2xl ml-10'><a href="../user/index.php"><span class='text-primary-500'>Clip</span>aro</a></li>
         <ul class='flex justify-evenly items-center w-1/3'>
             <li class='text-gray-600'><a href="#" class='hover:text-gray-900'>Contact</a></li>
             <?php if(isset($_SESSION['usersId'])) :?>
