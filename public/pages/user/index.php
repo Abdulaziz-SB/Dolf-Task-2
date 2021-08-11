@@ -1,5 +1,8 @@
 <?php 
-include '../../includes/autoload.inc.php'; $o = new Dbh();
+include '../../includes/autoload.inc.php';
+$eventObj = new EventContr;
+$result = $eventObj->ShowAllEvents();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,26 +32,26 @@ include '../../includes/autoload.inc.php'; $o = new Dbh();
             </div>
             <!-- Cards -->
             <div class='grid grid-cols-4 gap-10 mb-6'>
-                <?php $eventObj = new Event(); while($row = $eventObj->ViewEvents()->fetch_assoc()){?>
-                    <a href="./event-detail.php">
+                <?php while($row = $result->fetch_assoc()){?>
+                    <a href="./event-detail.php?o=<?php echo $row['user_id']?>&i=<?php echo $row['id']?>" >
                         <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
-                            <img src="/Dolf-Task-2/public/res/img/Football/ba.jpg" alt="couldn't load image" class='w-full object-cover'>
+                            <img src="<?php echo $row['img'] ?>" alt="couldn't load image" class='w-full object-cover'>
                             <div class='m-4'>
-                                <h2 class='mb-2 font-medium'>Football</h2>
+                                <h2 class='mb-2 font-medium'>hello</h2>
                                 <h2 class='mb-2 font-medium'><?php echo $row['name'];?></h2>
-                                <h2 class='mb-2 font-medium'>56 registered</h2>
-                                <h2 class='font-light'>9:00pm - 10:00pm 21/9/2021</h2>
+                                <h2 class='mb-2 font-medium'><?php echo $row['register'];?> registered</h2>
+                                <h2 class='font-light'><?php echo $row['date'] ?></h2>
                             </div>
                             <div class='bg-primary-300 text-gray-700 text-xs uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2'>
                                 <svg class="w-6 h-6 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                                <span>75 SR</span>
+                                <span><?php echo $row['price'] ?> SR</span>
                             </div>
                         </div>
                     </a>
-                    <?php };?>
+                    <?php }?>
                 <a href="./event-detail.php">
                     <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
-                        <img src="/Dolf-Task-2/public/res/img/Basketball/basketball1.jpg" alt="couldn't load image" class='w-full object-cover'>
+                        <img src="../../res/img/Basketball/basketball1.jpg" alt="couldn't load image" class='w-full object-cover'>
                         <div class='m-4'>
                             <h2 class='mb-2 font-medium'>Basketball</h2>
                             <h2 class='mb-2 font-medium'>Luis</h2>

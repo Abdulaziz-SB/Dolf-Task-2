@@ -24,6 +24,9 @@ class Dbh {
         $conn = new mysqli($this->servername, $this->username, $this->pwd, $this->dbname);
         return $conn;
     }
+    public function hello(){
+        echo 'hello';
+    }
 }
 function h(){
     echo 'yees';
