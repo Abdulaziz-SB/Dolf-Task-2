@@ -1,3 +1,6 @@
+<?php 
+include '../../includes/autoload.inc.php'; $o = new Dbh();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +13,7 @@
     <title>Cliparo</title>
 </head>
 <body class='h-full font-body bg-gray-100'>
-    <?php include('../common/header.php'); include('../../classes/event.class.php');?>
+    <?php include('../common/header.php');?>
     <main class='h-full w-full bg-gray-100 mb-24'>
         <!-- img -->
         <div class='bask bg-gray-700'>
@@ -26,7 +29,7 @@
             </div>
             <!-- Cards -->
             <div class='grid grid-cols-4 gap-10 mb-6'>
-                <?php $eventObj = new EventContr; while($row = $eventObj->ShowAllEvents()->fetch_assoc()){?>
+                <?php $eventObj = new Event(); while($row = $eventObj->ViewEvents()->fetch_assoc()){?>
                     <a href="./event-detail.php">
                         <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
                             <img src="/Dolf-Task-2/public/res/img/Football/ba.jpg" alt="couldn't load image" class='w-full object-cover'>

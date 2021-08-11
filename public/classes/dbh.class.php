@@ -25,3 +25,6 @@ class Dbh {
         return $conn;
     }
 }
+function h(){
+    echo 'yees';
+}
