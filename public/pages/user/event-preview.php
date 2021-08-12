@@ -2,16 +2,16 @@
     <!-- Overview inline-block --> 
     <div id='previewContainer' class='w-full h-full inline-block'>
         <div class='flex w-full'>
-            <img src="../../res/img/ba.jpg" alt="couldn't load image" class='w-5/12 h-3/6 object-cover rounded-tl'>
+            <img src="<?php echo $eventRow['img'];?>" class='w-5/12 h-3/6 object-cover rounded-tl'>
             <div class='w-full'>
                 <h1 class='text-4xl text-center w-11/12 mt-2 inline-block'><span class='text-primary-500'>Clip</span>aro</h1>
                 <span><i id='closeOverview' class="far fa-times-circle transform scale-150 text-gray-600 hover:text-gray-900 cursor-pointer" onclick='CloseOverview()'></i></span>
                 <div class='w-full h-1 m-auto bg-gray-200 mt-6'></div>
                 <ul class='mt-10 ml-10'>
-                    <li class='text-2xl mb-3 text-gray-600'><span class='font-semibold'>Event: </span> Football</li>
-                    <li class='text-2xl mb-3 text-gray-600'><span class='font-semibold'>Organizer: </span> Ahmed jaber</li>
-                    <li class='text-2xl mb-3 text-gray-600'><span class='font-semibold'>Date: </span> 9:00pm - 11:00pm 21/9/2021</li>
-                    <li class='text-2xl text-gray-600'><span class='font-semibold'>Price: </span> 75 SR</li>
+                    <li class='text-2xl mb-3 text-gray-600'><span class='font-semibold'>Event: </span> <?php echo $eventRow['name'];?></li>
+                    <li class='text-2xl mb-3 text-gray-600'><span class='font-semibold'>Organizer: </span> <?php echo $organizerRow['username'];?></li>
+                    <li class='text-2xl mb-3 text-gray-600'><span class='font-semibold'>Date: </span> <?php echo $eventRow['date'];?></li>
+                    <li class='text-2xl text-gray-600'><span class='font-semibold'>Price: </span> <?php echo $eventRow['price'];?> SR</li>
                 </ul>
             </div>
         </div>
@@ -56,7 +56,7 @@
             </div>
         </div>
         <div class='text-center'>
-            <button id='registerOverviewBtn' class='bg-primary-400 m-auto rounded-full h-14 w-80 text-xl hover:bg-primaryHover-200'>Checkout</button>
+            <button id='registerOverviewBtn' class='bg-primary-400 m-auto rounded-full h-14 w-80 text-xl hover:bg-primaryHover-200' onclick=CheckoutBtn(<?php echo('hello'); ?>)>Checkout</button>
         </div>
         </div>
     </div>

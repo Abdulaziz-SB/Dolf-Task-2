@@ -32,3 +32,12 @@ const ShowPreviewContainer = () => {
     document.getElementById('checkoutContainer').classList.remove('inline-block');
     document.getElementById('checkoutContainer').classList.add('hidden');
 }
+const CheckoutBtn = (message) => {
+    swal("Good job!", "You clicked the button!", "success", {button: 'Done'}).then((value) => {
+        if(value == true){
+            console.log('success');
+            window.location.href = '../../pages/user/index.php?v='+message;
+        }
+        // swal(`The returned value is: ${value}`);
+    });
+}
