@@ -56,7 +56,7 @@
             </div>
         </div>
         <div class='text-center'>
-            <button id='registerOverviewBtn' class='bg-primary-400 m-auto rounded-full h-14 w-80 text-xl hover:bg-primaryHover-200' onclick=CheckoutBtn(<?php echo('hello'); ?>)>Checkout</button>
+            <button id='registerOverviewBtn' class='bg-primary-400 m-auto rounded-full h-14 w-80 text-xl hover:bg-primaryHover-200' onclick=CheckoutBtn()>Checkout</button>
         </div>
         </div>
     </div>
