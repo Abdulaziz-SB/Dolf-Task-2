@@ -23,11 +23,11 @@
                     <input type='hidden' name='type' value='login'>
                     <div class='mb-6'>
                         <h3 class='font-body mb-3 text-light text-gray-600'>Username or Email</h3>
-                        <input type="text" name='name/email' required autocomplete='off' class='w-full h-14 rounded bg-gray-100 border border-gray-300'>
+                        <input type="text" name='name/email' required autocomplete='off' class='input-fields'>
                     </div>
                     <div class='mb-6'>
                         <h3 class='font-body mb-3 text-light text-gray-600'>Password</h3>
-                        <input type="password" name='pwd' required autocomplete='off' class='w-full h-14 rounded bg-gray-100 border border-gray-300'>
+                        <input type="password" name='pwd' required autocomplete='off' class='input-fields'>
                     </div>
                     <!-- submit & sign up -->
                     <div class='w-full mt-9 flex flex-col justify-center items-center'>

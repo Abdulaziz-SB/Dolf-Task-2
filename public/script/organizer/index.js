@@ -1,4 +1,3 @@
-console.log('hellloos')
 let listItems = document.getElementsByClassName('sidebar-item');
 // eventContainer
 // dashboardContainer
@@ -33,4 +32,14 @@ const ChangeItemColor = (id) => {
     }
     document.getElementById(id).childNodes[0].classList.remove('text-blue-300');
     document.getElementById(id).childNodes[0].classList.add('text-white');
+}
+const ShowAddEventContainer = () =>{
+    let newEventContainer = document.getElementById('addEventContainer');
+    if(newEventContainer.classList.contains('hidden')){
+        newEventContainer.classList.remove('hidden');
+        newEventContainer.classList.add('block');
+    }else{
+        newEventContainer.classList.remove('block');
+        newEventContainer.classList.add('hidden');
+    }
 }

@@ -1,7 +1,9 @@
 <?php 
 include '../../includes/autoload.inc.php';
+include_once('../../helpers/session_helper.php');
+
 $eventObj = new EventContr;
-$eventRow = $eventObj->Event($_GET['i']);
+$eventRow = $eventObj->Event($_GET['e']);
 $organizerRow = $eventObj->Organizer($_GET['o']);
 // $eventRow = $eventObj->getEvent($_GET['i']);
 

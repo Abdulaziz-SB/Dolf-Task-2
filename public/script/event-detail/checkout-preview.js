@@ -42,3 +42,18 @@ const CheckoutBtn = () => {
         // swal(`The returned value is: ${value}`);
     });
 }
+const addSlash = () => {
+    let ele = document.getElementById('tbNum');
+    ele = ele.value.split('/').join('');    // Remove dash (-) if mistakenly entered.
+
+    let finalVal = ele.match(/.{1,2}/g).join('/');
+    document.getElementById('tbNum').value = finalVal;
+}
+const addHyphens = () => {
+    let eleH = document.getElementById('ccn');
+    console.log('eleh')
+    eleH = eleH.value.split('-').join('');    // Remove dash (-) if mistakenly entered.
+
+    let finalVall = eleH.match(/.{1,4}/g).join('-');
+    document.getElementById('ccn').value = finalVall;
+}

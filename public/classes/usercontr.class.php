@@ -89,7 +89,11 @@ class UserContr extends User{
         $_SESSION['usersId'] = $user['id'];
         $_SESSION['usersName'] = $user['username'];
         $_SESSION['usersEmail'] = $user['email'];
-        redirect('../pages/user/index.php');
+        if($user['type'] == '1'){
+            redirect('../pages/organizer/index.php');
+        }else{
+            redirect('../pages/user/index.php');
+        }
     } 
     public function logout(){
         unset($_SESSION['usersId']);

@@ -1,5 +1,7 @@
 <?php
-    session_start();
+    if(!isset($_SESSION['usersId'])){
+        session_start();
+    }
 ?>
 <!-- header nav -->
 <header  class='h-auto'>

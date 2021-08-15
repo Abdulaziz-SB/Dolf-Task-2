@@ -1,3 +1,9 @@
+<?php 
+include '../../includes/autoload.inc.php';
+include_once('../../helpers/session_helper.php');
+
+$organizerObj = new OrganizerContr;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +21,9 @@
     <title>Organizer</title>
 </head>
 <body>
-    <?php include('../../header.php'); ?>
+    <?php include('../common/header.php');
+        $result = $organizerObj->showOrganizerEvents($_SESSION['usersId']);
+    ?>
     <div class='flex h-screen'>
         <!-- side bar -->
         <section class='hidden h-screen w-1/6 bg-blue-800 md:block'>
@@ -30,7 +38,7 @@
         <main id='dashboardContainer' class='w-full h-full bg-gray-200 hidden'>
             <section class='w-full h-auto inline-block p-11'>
                 <div>
-                    <h1 class='h-20 w-full text-3xl text-gray-600 font-medium'>Aziiz Dashboard</h1>
+                    <h1 class='h-20 w-full text-3xl text-gray-600 font-medium'><?php echo $_SESSION['usersName']; ?> Dashboard</h1>
                 </div>
                 <!-- summary -->
                 <div class='w-full h-auto grid grid-cols-3 gap-10 mt-20'>
@@ -129,11 +137,11 @@
         </main>
         <!-- Event container -->
         <main id='eventContainer' class='w-full h-full bg-gray-200 px-11'>
-            <section class='w-full mt-20 flex justify-around'>
+            <section class='w-full mt-20 flex justify-around mb-20'>
                 <div class='w-4/12 md:w-2/12 flex justify-between'>
                     <div class='w-full bg-white shadow-lg h-auto rounded-md p-5 flex justify-between hover:shadow-xl'>
                         <!-- attendance -->
-                        <div class='inline-block'><h2 class='text-3xl'>64</h2><h2 class='text-xl font-light text-gray-600 mt-3'>Total Events</h2></div>
+                        <div class='inline-block'><h2 class='text-3xl'><?php echo mysqli_num_rows($result); ?></h2><h2 class='text-xl font-light text-gray-600 mt-3'>Total Events</h2></div>
                         <div class='inline-block'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="52" height="71.216" viewBox="0 0 52 71.216">
                                 <g id="event-group" data-name="Group 16" transform="translate(-374.045 -21)">
@@ -144,7 +152,7 @@
                         </div>
                     </div>
                 </div>
-                <div class='rounded-md bg-white p-5 w-4/12 flex items-center justify-center md:w-2/12 cursor-pointer hover:shadow-lg'>
+                <div class='rounded-md bg-white p-5 w-4/12 flex items-center justify-center md:w-2/12 cursor-pointer hover:shadow-lg' onclick='ShowAddEventContainer()'>
                     <h2 class='text-2xl inline-block min-w-min mr-4'>Create event</h2>
                     <span><svg xmlns="http://www.w3.org/2000/svg" width="24.438" height="25.63" viewBox="0 0 24.438 25.63">
                         <path id="Icon_ionic-md-add" data-name="Icon ionic-md-add" d="M31.188,21.273H20.6V32.38H17.34V21.273H6.75V17.856H17.34V6.75H20.6V17.856h10.59Z" transform="translate(-6.75 -6.75)" fill="#ffb217"/>
@@ -152,6 +160,7 @@
                     </span>
                 </div>
             </section>
+            <?php include_once './add-event.php';?>
             <!-- table -->
             <section class='w-full h-auto mt-20'>
                 <table class='table-auto w-full'>
@@ -165,12 +174,14 @@
                             <th></th>
                         </tr>
                     </thead>
+                    <?php $id=0; 
+                    while($row = $result->fetch_assoc()){?>
                     <tbody class='bg-white text-center text-xl'>
                         <tr>
-                            <td class='p-3 text-gray-500'>1</td>
-                            <td class='p-3'>Basketball</td>
-                            <td class='p-3'>9:00pm - 11:00pm 21/9/2021 </td>
-                            <td class='p-3'>123</td>
+                            <td class='p-3 text-gray-500'><?php echo $id+=1; ?></td>
+                            <td class='p-3'><?php echo $row['name'] ?></td>
+                            <td class='p-3'><?php echo $row['date'] ?></td>
+                            <td class='p-3'><?php echo $row['available'] ?></td>
                             <td class='p-3'><span class='cursor-pointer'><svg xmlns="http://www.w3.org/2000/svg" width="43.869" height="6.75" viewBox="0 0 43.869 6.75">
                                 <path id="Icon_awesome-minus" data-name="Icon awesome-minus" d="M40.736,14.625H3.134C1.4,14.625,0,15.633,0,16.875v2.25c0,1.242,1.4,2.25,3.134,2.25h37.6c1.73,0,3.134-1.008,3.134-2.25v-2.25C43.869,15.633,42.466,14.625,40.736,14.625Z" transform="translate(0 -14.625)" fill="#f64747"/>
                                 </svg></span>
@@ -181,22 +192,7 @@
                             </td>
                         </tr>
                     </tbody>
-                    <tbody class='bg-white text-center text-xl'>
-                        <tr>
-                            <td class='p-3 text-gray-500'>2</td>
-                            <td class='p-3'>Football</td>
-                            <td class='p-3'>9:00pm - 11:00pm 21/9/2021 </td>
-                            <td class='p-3'>123</td>
-                            <td class='p-3'><span class='cursor-pointer'><svg xmlns="http://www.w3.org/2000/svg" width="43.869" height="6.75" viewBox="0 0 43.869 6.75">
-                                <path id="Icon_awesome-minus" data-name="Icon awesome-minus" d="M40.736,14.625H3.134C1.4,14.625,0,15.633,0,16.875v2.25c0,1.242,1.4,2.25,3.134,2.25h37.6c1.73,0,3.134-1.008,3.134-2.25v-2.25C43.869,15.633,42.466,14.625,40.736,14.625Z" transform="translate(0 -14.625)" fill="#f64747"/>
-                                </svg></span>
-                            </td>
-                            <td class='p-3'><span class='cursor-pointer'><svg xmlns="http://www.w3.org/2000/svg" width="31.001" height="31" viewBox="0 0 31.001 31">
-                                <path id="Icon_awesome-pen" data-name="Icon awesome-pen" d="M17.6,5.646,25.355,13.4,8.523,30.229l-6.911.763a1.453,1.453,0,0,1-1.6-1.605l.769-6.916L17.6,5.646ZM30.149,4.492,26.51.852a2.908,2.908,0,0,0-4.112,0L18.974,4.276l7.751,7.751L30.149,8.6a2.908,2.908,0,0,0,0-4.112Z" transform="translate(0.001 -0.001)" fill="#66bbdb"/>
-                                </svg></span>
-                            </td>
-                        </tr>
-                    </tbody>
+                    <?php }?>
                 </table>
             </section>
         </main>

@@ -9,6 +9,9 @@
         @apply bg-white rounded overflow-hidden shadow-md relative;
         -webkit-transition: transform 0.3s ease-in-out;
     }
+    .input-fields{
+        @apply w-full h-14 p-2 text-gray-700 rounded bg-gray-100 border border-gray-300 focus:ring-2 focus:ring-gray-400 outline-none;
+    }
 }
 .card:hover{
     transform: translateY(-20px);

@@ -1,5 +1,7 @@
 <?php
 // checkout model
+require_once './dbh.class.php';
+
 class Checkout extends Dbh{
     private $db;
 
@@ -10,11 +12,11 @@ class Checkout extends Dbh{
 
     public function InsertCheckoutData($data){
         $stmt = mysqli_stmt_init($this->db);
-        if(!mysqli_stmt_prepare($stmt, 'INSERT INTO reservation (event_id, user_id, price, payment_method, date) VALUES (?, ?, ?, ?, ?)')){
+        if(!mysqli_stmt_prepare($stmt, 'INSERT INTO reservation (event_id, user_id, price, payment_method, dates) VALUES (?, ?, ?, ?, ?)')){
             return false;
         }else{
             // insert
-            mysqli_stmt_bind_param($stmt, 'iiiss', $data['event_id'], $data['user_id'], $data['price'], $data['payment_method'], $data['date']);
+            mysqli_stmt_bind_param($stmt, 'iiiss', $data['eventId'], $data['usersId'], $data['price'], $data['paymentMethod'], $data['cardDate']);
             mysqli_stmt_execute($stmt);
             return true;
         }
