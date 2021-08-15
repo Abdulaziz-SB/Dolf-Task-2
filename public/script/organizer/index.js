@@ -38,8 +38,14 @@ const ShowAddEventContainer = () =>{
     if(newEventContainer.classList.contains('hidden')){
         newEventContainer.classList.remove('hidden');
         newEventContainer.classList.add('block');
+        // registration 
+        document.getElementById('registrationContainer').classList.remove('block');
+        document.getElementById('registrationContainer').classList.add('hidden');
     }else{
         newEventContainer.classList.remove('block');
         newEventContainer.classList.add('hidden');
+        // registration 
+        document.getElementById('registrationContainer').classList.remove('hidden');
+        document.getElementById('registrationContainer').classList.add('block');
     }
 }

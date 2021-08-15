@@ -89,6 +89,7 @@ class UserContr extends User{
         $_SESSION['usersId'] = $user['id'];
         $_SESSION['usersName'] = $user['username'];
         $_SESSION['usersEmail'] = $user['email'];
+        $_SESSION['usersType'] = $user['type'];
         if($user['type'] == '1'){
             redirect('../pages/organizer/index.php');
         }else{

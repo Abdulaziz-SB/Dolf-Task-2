@@ -5,7 +5,7 @@ include_once('../../helpers/session_helper.php');
 $organizerObj = new OrganizerContr;
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class='h-full'>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,13 +20,13 @@ $organizerObj = new OrganizerContr;
     <link rel="stylesheet" href="../../styles/style.css">
     <title>Organizer</title>
 </head>
-<body>
+<body class='h-full'>
     <?php include('../common/header.php');
         $result = $organizerObj->showOrganizerEvents($_SESSION['usersId']);
     ?>
-    <div class='flex h-screen'>
+    <div class='flex h-full'>
         <!-- side bar -->
-        <section class='hidden h-screen w-1/6 bg-blue-800 md:block'>
+        <section class='hidden h-full w-1/6 bg-blue-800 md:block'>
             <ul class='h-1/2 w-full flex flex-col justify-around items-start p-5 mt-10'>
                <a href="#" id='dashboardIcon' onclick='NavigateSideBar(event)'><li class='text-2xl text-white w-full h-auto sidebar-item sidebar-item hover:text-blue-100'><span class='mr-2'><i class="fas fa-home"></i></span>Dashboard</li></a>
                <a href="#" id='eventIcon' onclick='NavigateSideBar(event)'><li class='text-2xl text-white sidebar-item hover:text-blue-100'><span class='mr-2'><i class="fas fa-star"></i></span>Events</li></a>
@@ -136,14 +136,14 @@ $organizerObj = new OrganizerContr;
             </section>
         </main>
         <!-- Event container -->
-        <main id='eventContainer' class='w-full h-full bg-gray-200 px-11'>
+        <main id='eventContainer' class='w-full h-full bg-gray-200 px-1 md:px-11'>
             <section class='w-full mt-20 flex justify-around mb-20'>
-                <div class='w-4/12 md:w-2/12 flex justify-between'>
+                <div class='w-5/12 md:w-4/12 lg:w-3/12 flex justify-between'>
                     <div class='w-full bg-white shadow-lg h-auto rounded-md p-5 flex justify-between hover:shadow-xl'>
                         <!-- attendance -->
                         <div class='inline-block'><h2 class='text-3xl'><?php echo mysqli_num_rows($result); ?></h2><h2 class='text-xl font-light text-gray-600 mt-3'>Total Events</h2></div>
                         <div class='inline-block'>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="52" height="71.216" viewBox="0 0 52 71.216">
+                            <svg xmlns="http://www.w3.org/2000/svg" class='w-full' width="52" height="71.216" viewBox="0 0 52 71.216">
                                 <g id="event-group" data-name="Group 16" transform="translate(-374.045 -21)">
                                     <path id="Path_124" data-name="Path 124" d="M26,0A26,26,0,0,1,52,26c0,14.359-11.641,45.216-26,45.216S0,40.359,0,26A26,26,0,0,1,26,0Z" transform="translate(374.045 21)" fill="#ff5ef4"/>
                                     <path id="Icon_material-date-range" data-name="Icon material-date-range" d="M13.5,16.5h-3v3h3Zm6,0h-3v3h3Zm6,0h-3v3h3ZM28.5,6H27V3H24V6H12V3H9V6H7.5A2.986,2.986,0,0,0,4.515,9L4.5,30a3,3,0,0,0,3,3h21a3.009,3.009,0,0,0,3-3V9A3.009,3.009,0,0,0,28.5,6Zm0,24H7.5V13.5h21Z" transform="translate(382.045 29)" fill="#ffd6fc"/>
@@ -152,7 +152,7 @@ $organizerObj = new OrganizerContr;
                         </div>
                     </div>
                 </div>
-                <div class='rounded-md bg-white p-5 w-4/12 flex items-center justify-center md:w-2/12 cursor-pointer hover:shadow-lg' onclick='ShowAddEventContainer()'>
+                <div class='rounded-md bg-white p-5 w-5/12 md:w-4/12 lg:w-3/12 flex items-center justify-center cursor-pointer hover:shadow-lg' onclick='ShowAddEventContainer()'>
                     <h2 class='text-2xl inline-block min-w-min mr-4'>Create event</h2>
                     <span><svg xmlns="http://www.w3.org/2000/svg" width="24.438" height="25.63" viewBox="0 0 24.438 25.63">
                         <path id="Icon_ionic-md-add" data-name="Icon ionic-md-add" d="M31.188,21.273H20.6V32.38H17.34V21.273H6.75V17.856H17.34V6.75H20.6V17.856h10.59Z" transform="translate(-6.75 -6.75)" fill="#ffb217"/>
@@ -162,14 +162,14 @@ $organizerObj = new OrganizerContr;
             </section>
             <?php include_once './add-event.php';?>
             <!-- table -->
-            <section class='w-full h-auto mt-20'>
+            <section class='w-full h-auto my-20' id='registrationContainer'>
                 <table class='table-auto w-full'>
                     <thead class='bg-gray-100 text-xl text-gray-700'>
                         <tr>
-                            <th class='font-normal'>#</th>
-                            <th class='font-normal'>Event</th>
-                            <th class='font-normal'>Date</th>
-                            <th class='font-normal'>Registered</th>
+                            <th class='font-normal text-base md:text-lg'>#</th>
+                            <th class='font-normal text-base md:text-lg'>Event</th>
+                            <th class='font-normal text-base md:text-lg'>Date</th>
+                            <th class='font-normal text-base md:text-lg'>Registered</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -178,15 +178,15 @@ $organizerObj = new OrganizerContr;
                     while($row = $result->fetch_assoc()){?>
                     <tbody class='bg-white text-center text-xl'>
                         <tr>
-                            <td class='p-3 text-gray-500'><?php echo $id+=1; ?></td>
-                            <td class='p-3'><?php echo $row['name'] ?></td>
-                            <td class='p-3'><?php echo $row['date'] ?></td>
-                            <td class='p-3'><?php echo $row['available'] ?></td>
-                            <td class='p-3'><span class='cursor-pointer'><svg xmlns="http://www.w3.org/2000/svg" width="43.869" height="6.75" viewBox="0 0 43.869 6.75">
+                            <td class='p-3 text-gray-500 text-base md:text-lg'><?php echo $id+=1; ?></td>
+                            <td class='p-3 text-base md:text-lg'><?php echo $row['name'] ?></td>
+                            <td class='p-1 md:p-3 text-base md:text-lg'><?php echo $row['date'] ?></td>
+                            <td class='p-3 text-base md:text-lg'><?php echo $row['available'] ?></td>
+                            <td class='p-1 w-1/12 md:w-1/12'><span class='cursor-pointer'><svg xmlns="http://www.w3.org/2000/svg" class='w-full h-2/3 md:w-1/3' viewBox="0 0 43.869 6.75">
                                 <path id="Icon_awesome-minus" data-name="Icon awesome-minus" d="M40.736,14.625H3.134C1.4,14.625,0,15.633,0,16.875v2.25c0,1.242,1.4,2.25,3.134,2.25h37.6c1.73,0,3.134-1.008,3.134-2.25v-2.25C43.869,15.633,42.466,14.625,40.736,14.625Z" transform="translate(0 -14.625)" fill="#f64747"/>
                                 </svg></span>
                             </td>
-                            <td class='p-3'><span class='cursor-pointer'><svg xmlns="http://www.w3.org/2000/svg" width="31.001" height="31" viewBox="0 0 31.001 31">
+                            <td class='p-1 w-1/12 md:w-1/12'><span class='cursor-pointer'><svg xmlns="http://www.w3.org/2000/svg"    class='w-full h-2/3 md:w-1/3' viewBox="0 0 31.001 31">
                                 <path id="Icon_awesome-pen" data-name="Icon awesome-pen" d="M17.6,5.646,25.355,13.4,8.523,30.229l-6.911.763a1.453,1.453,0,0,1-1.6-1.605l.769-6.916L17.6,5.646ZM30.149,4.492,26.51.852a2.908,2.908,0,0,0-4.112,0L18.974,4.276l7.751,7.751L30.149,8.6a2.908,2.908,0,0,0,0-4.112Z" transform="translate(0.001 -0.001)" fill="#66bbdb"/>
                                 </svg></span>
                             </td>
