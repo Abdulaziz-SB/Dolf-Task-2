@@ -1,6 +1,6 @@
 <?php 
 include_once('../../helpers/session_helper.php');
-error_reporting(E_ERROR | E_PARSE);
+error_reporting(E_ERROR | E_PARSE);  
 
 ?>
 <!DOCTYPE html>
