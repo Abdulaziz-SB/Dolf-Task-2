@@ -1,8 +1,8 @@
 <section class='w-full h-auto rounded-md hidden transition delay-150 duration-300 ease-in-out' id='addEventContainer'>
-    <div class='w-4/6 h-full m-auto bg-white p-3'>
-        <form action="#" method='post' class='w-auto h-full'>
+    <div class='w-4/6 h-auto m-auto bg-white p-3'>
+        <form action="../../classes/organizercontr.class.php" method='post' enctype='multipart/form-data' class='w-auto h-auto'>
             <input type="hidden" name='addEvent' value='addNewEvent'>
-            <div class='w-full h-full flex flex-col'>
+            <div class='w-full h-auto flex flex-col'>
                 <div class="flex w-full gap-10">
                     <div class='w-1/2'>
                     <!-- name type price registration date about img -->
@@ -42,6 +42,7 @@
                 </div>
             </div>
             <div class='w-full mt-7 mb-2 text-center'>
+                <a href="../../classes/organizercontr.class.php">dsds</a>
                 <button type='submit' class='w-3/12 h-12 shadow-md rounded-md bg-blue-600 text-white text-xl hover:bg-blue-800'>Add event</button>
             </div>
         </form>

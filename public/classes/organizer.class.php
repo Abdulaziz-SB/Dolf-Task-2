@@ -1,6 +1,11 @@
 <?php
-// user model
+// organizer model
 // require_once './dbh.class.php';
+// try {
+//     include './dbh.class.php';
+// }catch (Exception $e){
+    
+// }
 
 class Organizer extends Dbh {
     private $db;

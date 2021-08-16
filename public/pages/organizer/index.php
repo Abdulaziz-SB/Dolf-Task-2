@@ -1,8 +1,7 @@
 <?php 
-include '../../includes/autoload.inc.php';
 include_once('../../helpers/session_helper.php');
+error_reporting(E_ERROR | E_PARSE);
 
-$organizerObj = new OrganizerContr;
 ?>
 <!DOCTYPE html>
 <html lang="en" class='h-full'>
@@ -22,6 +21,8 @@ $organizerObj = new OrganizerContr;
 </head>
 <body class='h-full'>
     <?php include('../common/header.php');
+        include_once '../../includes/autoload.inc.php';
+        $organizerObj = new OrganizerContr;
         $result = $organizerObj->showOrganizerEvents($_SESSION['usersId']);
     ?>
     <div class='flex h-full'>
