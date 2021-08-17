@@ -4,7 +4,7 @@
     }
 ?>
 <!-- header nav -->
-<header  class='h-auto'>
+<header  class='h-auto bg-white'>
     <nav class='h-20 p-8 flex justify-between items-center'>
         <li class='list-none text-2xl ml-10'><a href="../user/index.php"><span class='text-primary-500'>Clip</span>aro</a></li>
         <ul class='flex justify-evenly items-center w-1/3'>
@@ -12,6 +12,8 @@
             <?php if(isset($_SESSION['usersType'])){ if($_SESSION['usersType'] == '1'):?>
                 <li class='text-gray-600'><a href="#" class='hover:text-gray-900 hidden'>Dashboard</a></li>
                 <li class='text-gray-600'><a href="#" class='hover:text-gray-900 hidden'>Events</a></li>
+            <?php else:?>
+                <li class='text-gray-600'><a href="../user/my-event.php" class='hover:text-primary-500'>My events</a></li>
             <?php endif; }?>
             <?php if(isset($_SESSION['usersId'])) :?>
                 <li class='text-gray-600 relative user-tab hidden lg:block'><?php echo $_SESSION['usersName']; ?></li>

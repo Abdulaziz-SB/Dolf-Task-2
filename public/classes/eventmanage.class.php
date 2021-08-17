@@ -42,6 +42,12 @@ class EventManage extends Dbh{
             return false;
         }
     }
-    
-    // addNewEvent
+    public function DeleteUserEvent($userId, $eventId){
+        $sql = "DELETE FROM reservation WHERE user_id = ".$userId." AND event_id = ".$eventId;
+        if ($this->db->query($sql) === TRUE) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

@@ -1,4 +1,7 @@
 <?php
+if(!isset($_SESSION['usersId'])){
+    session_start();
+}
 include_once './eventManage.class.php';
 
 class EventManageContr extends EventManage{
@@ -67,10 +70,6 @@ class EventManageContr extends EventManage{
         }else{
             redirect('../pages/organizer/index.php?st=failed');
         }
-        // $this->eve();
-        // print_r($data) . '<br>';
-        // echo $data['img'] . $data['userId'] ;
-        // $this->
     }
     public function DeleteEventById($id){
         if($this->eventManage->DeleteEvent($id)){
@@ -79,18 +78,28 @@ class EventManageContr extends EventManage{
             redirect('../pages/organizer/index.php?st=failed');
         }
     }
+    public function DeleteCustomerEvent(){
+        if($this->eventManage->DeleteUserEvent($_SESSION['usersId'], '2')){
+            redirect('../pages/user/my-event.php?st=deleted');
+        }else{
+            redirect('../pages/user/my-event.php?st=failed');
+        }
+    }
 }
 $init = new EventManageContr;
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     switch($_POST['addEvent']){
         case 'addNewEvent':
-            // require_once './organizer.class.php';DeleteEvent
             $init->addEvent();
             break;
     }
 }else{
     if(isset($_GET['id'])){
-        $init->DeleteEventById($_GET['id']);
+        if($_GET['id'] == 'delete'){
+            $init->DeleteCustomerEvent();
+        }else{
+            $init->DeleteEventById($_GET['id']);
+        }
     }
 }

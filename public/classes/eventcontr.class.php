@@ -16,4 +16,8 @@ class EventContr extends Event{
         $result =  $this->GetEvent($event);
         return $result;
     }
+    public function ShowMyEvents(){
+        $result = $this->ShowMyReservedEvents($_SESSION['usersId']);
+        return $result;
+    }
 }

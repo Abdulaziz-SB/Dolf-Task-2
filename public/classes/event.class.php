@@ -50,4 +50,13 @@ class Event extends Dbh {
             return false;
         }
     }
+    public function ShowMyReservedEvents($userId){
+        $sql = 'SELECT event_id, reservation.user_id, reservation.price, payment_method, event.date, event.name as event_name, event.img, sport.name as sport_name FROM reservation INNER JOIN event ON event_id=event.id INNER JOIN sport ON event.type_id=sport.id Where reservation.user_id ='.$userId;
+        $result = $this->db->query($sql);
+        if($result->num_rows > 0){
+            return $result;
+        }else{
+            return false;
+        }
+    }
 }
