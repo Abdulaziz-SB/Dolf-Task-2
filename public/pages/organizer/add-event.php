@@ -1,8 +1,7 @@
 <section class='w-full h-auto rounded-md hidden transition delay-150 duration-300 ease-in-out' id='addEventContainer'>
     <div class='w-4/6 h-auto m-auto bg-white p-3'>
-        <form action="../../classes/organizercontr.class.php" method='post' enctype='multipart/form-data' class='w-auto h-auto'>
+        <form action="../../classes/eventmanagecontr.class.php" method='post' enctype='multipart/form-data' class='w-auto h-auto'>
             <input type="hidden" name='addEvent' value='addNewEvent'>
-            <input type="hidden" name='typeIndex' value='' id='eventTypeIndex'>
             <div class='w-full h-auto flex flex-col'>
                 <div class="flex w-full gap-10">
                     <div class='w-1/2'>

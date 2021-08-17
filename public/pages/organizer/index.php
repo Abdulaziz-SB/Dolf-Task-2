@@ -1,6 +1,6 @@
 <?php 
 include_once('../../helpers/session_helper.php');
-error_reporting(E_ERROR | E_PARSE);  
+// error_reporting(E_ERROR | E_PARSE);
 
 ?>
 <!DOCTYPE html>
@@ -57,7 +57,7 @@ error_reporting(E_ERROR | E_PARSE);
                     </div>
                     <div class='bg-white shadow-lg h-auto rounded-md p-5 flex justify-between hover:shadow-xl'>
                         <!-- events -->
-                        <div class='inline-block'><h2 class='text-3xl'>23</h2><h2 class='text-xl font-light text-gray-600 mt-3'>Events</h2></div>
+                        <div class='inline-block'><h2 class='text-3xl'><?php echo $organizerObj->thousandsCurrencyFormat(mysqli_num_rows($result)); ?></h2><h2 class='text-xl font-light text-gray-600 mt-3'>Events</h2></div>
                         <div class='inline-block'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="52" height="71.216" viewBox="0 0 52 71.216">
                                 <g id="event-group" data-name="Group 16" transform="translate(-374.045 -21)">
@@ -142,7 +142,7 @@ error_reporting(E_ERROR | E_PARSE);
                 <div class='w-5/12 md:w-4/12 lg:w-3/12 flex justify-between'>
                     <div class='w-full bg-white shadow-lg h-auto rounded-md p-5 flex justify-between hover:shadow-xl'>
                         <!-- attendance -->
-                        <div class='inline-block'><h2 class='text-3xl'><?php echo mysqli_num_rows($result); ?></h2><h2 class='text-xl font-light text-gray-600 mt-3'>Total Events</h2></div>
+                        <div class='inline-block'><h2 class='text-3xl'><?php echo $organizerObj->thousandsCurrencyFormat(mysqli_num_rows($result)); ?></h2><h2 class='text-xl font-light text-gray-600 mt-3'>Total Events</h2></div>
                         <div class='inline-block'>
                             <svg xmlns="http://www.w3.org/2000/svg" class='w-full' width="52" height="71.216" viewBox="0 0 52 71.216">
                                 <g id="event-group" data-name="Group 16" transform="translate(-374.045 -21)">
@@ -183,13 +183,13 @@ error_reporting(E_ERROR | E_PARSE);
                             <td class='p-3 text-base md:text-lg'><?php echo $row['name'] ?></td>
                             <td class='p-1 md:p-3 text-base md:text-lg'><?php echo $row['date'] ?></td>
                             <td class='p-3 text-base md:text-lg'><?php echo $row['available'] ?></td>
-                            <td class='p-1 w-1/12 md:w-1/12'><span class='cursor-pointer'><svg xmlns="http://www.w3.org/2000/svg" class='w-full h-2/3 md:w-1/3' viewBox="0 0 43.869 6.75">
+                            <td class='p-1 w-1/12 md:w-1/12'><a href="../../classes/eventmanagecontr.class.php?id='<?php echo $row['id'] ?>'"><span class='cursor-pointer'><svg xmlns="http://www.w3.org/2000/svg" class='w-full h-2/3 md:w-1/3' viewBox="0 0 43.869 6.75">
                                 <path id="Icon_awesome-minus" data-name="Icon awesome-minus" d="M40.736,14.625H3.134C1.4,14.625,0,15.633,0,16.875v2.25c0,1.242,1.4,2.25,3.134,2.25h37.6c1.73,0,3.134-1.008,3.134-2.25v-2.25C43.869,15.633,42.466,14.625,40.736,14.625Z" transform="translate(0 -14.625)" fill="#f64747"/>
                                 </svg></span>
                             </td>
                             <td class='p-1 w-1/12 md:w-1/12'><span class='cursor-pointer'><svg xmlns="http://www.w3.org/2000/svg"    class='w-full h-2/3 md:w-1/3' viewBox="0 0 31.001 31">
                                 <path id="Icon_awesome-pen" data-name="Icon awesome-pen" d="M17.6,5.646,25.355,13.4,8.523,30.229l-6.911.763a1.453,1.453,0,0,1-1.6-1.605l.769-6.916L17.6,5.646ZM30.149,4.492,26.51.852a2.908,2.908,0,0,0-4.112,0L18.974,4.276l7.751,7.751L30.149,8.6a2.908,2.908,0,0,0,0-4.112Z" transform="translate(0.001 -0.001)" fill="#66bbdb"/>
-                                </svg></span>
+                                </svg></span></a>
                             </td>
                         </tr>
                     </tbody>
