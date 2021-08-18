@@ -78,8 +78,8 @@ class EventManageContr extends EventManage{
             redirect('../pages/organizer/index.php?st=failed');
         }
     }
-    public function DeleteCustomerEvent(){
-        if($this->eventManage->DeleteUserEvent($_SESSION['usersId'], '2')){
+    public function DeleteCustomerEvent($eventId){
+        if($this->eventManage->DeleteUserEvent($_SESSION['usersId'], $eventId)){
             redirect('../pages/user/my-event.php?st=deleted');
         }else{
             redirect('../pages/user/my-event.php?st=failed');
@@ -97,7 +97,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 }else{
     if(isset($_GET['id'])){
         if($_GET['id'] == 'delete'){
-            $init->DeleteCustomerEvent();
+            // e -> event id
+            $init->DeleteCustomerEvent($_GET['e']);
         }else{
             $init->DeleteEventById($_GET['id']);
         }

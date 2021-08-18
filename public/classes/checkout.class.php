@@ -11,6 +11,7 @@ class Checkout extends Dbh{
     }
 
     public function InsertCheckoutData($data){
+        $this->UpdateEventData();
         $stmt = mysqli_stmt_init($this->db);
         if(!mysqli_stmt_prepare($stmt, 'INSERT INTO reservation (event_id, user_id, price, payment_method, dates) VALUES (?, ?, ?, ?, ?)')){
             return false;
@@ -36,5 +37,10 @@ class Checkout extends Dbh{
         }else{
             return false;
         }
+    }
+    // increment and dec available, register
+    public function UpdateEventData(){
+        $sql = 'UPDATE event set available = available - 1, register = register + 1 where id = 1;'
+        $this->db->query($sql);
     }
 }

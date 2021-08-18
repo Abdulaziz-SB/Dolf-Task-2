@@ -59,4 +59,13 @@ class Event extends Dbh {
             return false;
         }
     }
+    public function GetMyReservedEvents($userId){
+        $sql = 'SELECT event_id, user_id FROM reservation WHERE user_id = '.$userId;
+        $result = $this->db->query($sql);
+        if($result->num_rows > 0){
+            return $result;
+        }else{
+            return false;
+        }
+    }
 }

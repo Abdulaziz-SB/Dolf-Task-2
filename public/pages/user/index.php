@@ -2,7 +2,6 @@
 include '../../includes/autoload.inc.php';
 $eventObj = new EventContr;
 $result = $eventObj->ShowAllEvents();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +15,14 @@ $result = $eventObj->ShowAllEvents();
     <title>Cliparo</title>
 </head>
 <body class='h-full font-body bg-gray-100'>
-    <?php include('../common/header.php');?>
+    <?php include('../common/header.php');
+    if (!(session_status() == PHP_SESSION_NONE)) {
+        $reservedResult = $eventObj->ReservedEvents($_SESSION['usersId']);
+        $reserved = array();
+        while($rows = $reservedResult->fetch_assoc()){
+            array_push($reserved, $rows['event_id']);
+        }
+    }?>
     <main class='h-full w-full bg-gray-100 mb-24'>
         <!-- img -->
         <div class='bask bg-gray-700'>
@@ -33,13 +39,14 @@ $result = $eventObj->ShowAllEvents();
             <!-- Cards -->
             <div class='grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-10 mb-6'>
                 <?php while($row = $result->fetch_assoc()){?>
-                    <a href="./event-detail.php?o=<?php echo $row['user_id']?>&e=<?php echo $row['id']?>" >
-                        <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
+                    <a href="./event-detail.php?o=<?php echo $row['user_id']?>&e=<?php echo $row['id']?>" class='<?php if(in_array($row['id'], $reserved) || $row['available'] == '0'){ ?> pointer-events-none <?php }else{?> pointer-events-auto <?php }?>'>
+                    <div class='card w-full h-auto hover:shadow-lg cursor-pointer relative'>
+                            <?php if(in_array($row['id'], $reserved)){ ?><div class='w-full h-full absolute opacity-40 bg-green-500'></div><?php 
+                            }elseif($row['available'] == 0){ ?><div class='w-full h-full absolute opacity-40 bg-red-500'></div><?php }?>
                             <img src="<?php echo $row['img'] ?>" alt="couldn't load image" class='w-full object-cover'>
                             <div class='m-4'>
-                                <h2 class='mb-2 font-medium'>hello</h2>
                                 <h2 class='mb-2 font-medium'><?php echo $row['name'];?></h2>
-                                <h2 class='mb-2 font-medium'><?php echo $row['register'];?> registered</h2>
+                                <h2 class='mb-2 font-medium'><?php if(in_array($row['id'], $reserved)){ ?>Registered<?php }else{ echo $row['available'];?> available<?php }?></h2>
                                 <h2 class='font-light'><?php echo $row['date'] ?></h2>
                             </div>
                             <div class='bg-primary-300 text-gray-700 text-xs uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2'>
@@ -59,7 +66,7 @@ $result = $eventObj->ShowAllEvents();
             <div>
                 <h1 class='text-3xl font-medium mb-7'>View all Events</h1>
                 <p class='text-2xl text-gray-600 font-light mb-6'>Search your favourite event</p>
-                <button class='bg-primary-400 rounded-full h-14 w-64 text-xl hover:bg-primaryHover-200'>View</button>
+                <a href="./view-all-events.php"><button class='bg-primary-400 rounded-full h-14 w-64 text-xl hover:bg-primaryHover-200'>View</button></a>
             </div>
             <!-- seperater svg holder -->
             <div class='mr-32 hidden md:block'>
