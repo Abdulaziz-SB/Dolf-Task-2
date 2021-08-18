@@ -3,7 +3,6 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 if(!isset($_SESSION['usersId'])){
-        // header('./index.php');
         header('Location: ./index.php');
 }
 include_once '../../includes/autoload.inc.php';

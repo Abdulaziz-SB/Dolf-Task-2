@@ -1,4 +1,10 @@
 <?php 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+if(!isset($_SESSION['usersId'])){
+        header('Location: ../common/sign-in.php');
+}
 include '../../includes/autoload.inc.php';
 include_once('../../helpers/session_helper.php');
 

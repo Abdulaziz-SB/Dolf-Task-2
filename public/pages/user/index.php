@@ -26,12 +26,12 @@ $result = $eventObj->ShowAllEvents();
             </div>
         </div>
         <!-- event section -->
-        <section class='h-full p-28'>
+        <section class='h-full p-4 md:p-28'>
             <div class='mt-16 mb-10'>
                 <h1 class='text-4xl text-gray-700 font-light'>Events</h1>
             </div>
             <!-- Cards -->
-            <div class='grid grid-cols-4 gap-10 mb-6'>
+            <div class='grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-10 mb-6'>
                 <?php while($row = $result->fetch_assoc()){?>
                     <a href="./event-detail.php?o=<?php echo $row['user_id']?>&e=<?php echo $row['id']?>" >
                         <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
@@ -49,35 +49,20 @@ $result = $eventObj->ShowAllEvents();
                         </div>
                     </a>
                     <?php }?>
-                <a href="./event-detail.php">
-                    <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
-                        <img src="../../res/img/Basketball/basketball1.jpg" alt="couldn't load image" class='w-full object-cover'>
-                        <div class='m-4'>
-                            <h2 class='mb-2 font-medium'>Basketball</h2>
-                            <h2 class='mb-2 font-medium'>Luis</h2>
-                            <h2 class='mb-2 font-medium'>36 registered</h2>
-                            <h2 class='font-light'>10:00pm - 12:00pm 21/9/2021</h2>
-                        </div>
-                        <div class='bg-primary-300 text-gray-700 text-xs uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2'>
-                            <svg class="w-6 h-6 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                            <span>50 SR</span>
-                        </div>
-                    </div>
-                </a>
             </div>
         </section>
         <!-- <div class='w-full h-80'>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#FBC8BA" fill-opacity="1" d="M0,128L48,122.7C96,117,192,107,288,122.7C384,139,480,181,576,192C672,203,768,181,864,165.3C960,149,1056,139,1152,133.3C1248,128,1344,128,1392,128L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
         </div> -->
         <!-- view all events section -->
-        <section class='h-80 pl-28 pt-10 bg-primary-100 flex justify-around items-center'>
+        <section class='h-80 p-4 md:pl-28 md:pt-10 bg-primary-100 flex justify-around items-center'>
             <div>
                 <h1 class='text-3xl font-medium mb-7'>View all Events</h1>
                 <p class='text-2xl text-gray-600 font-light mb-6'>Search your favourite event</p>
                 <button class='bg-primary-400 rounded-full h-14 w-64 text-xl hover:bg-primaryHover-200'>View</button>
             </div>
             <!-- seperater svg holder -->
-            <div class='mr-32'>
+            <div class='mr-32 hidden md:block'>
             <svg xmlns="http://www.w3.org/2000/svg" width="376.514" height="316.321" viewBox="0 0 376.514 316.321">
                 <g id="basket-illustration" transform="translate(68.982 48.348)">
                     <path id="blob" d="M322.54,40.427c18.7,32.773-8.544,91.007-41.4,134.011-32.561,43-70.736,70.773-112.378,73.326-41.942,2.554-87.648-20.4-123.064-64.83S-14.548,72.606,8.69,37.279C31.927,2.246,102.927-1.919,170.9-.493S303.536,7.949,322.54,40.427Z" transform="translate(-12.854 -47.557) rotate(13)" fill="rgba(188,92,65,0.21)"/>
@@ -186,8 +171,8 @@ $result = $eventObj->ShowAllEvents();
         </section>
         <?php if(!isset($_SESSION['usersId'])):?>
         <div class='h-72 w-full bg-primary-300 flex flex-col items-center justify-center mb-20'>
-            <h1 class='text-gray-600 text-2xl font-normal mb-10'>Want to stay athletic, healthy, join our events that are monitored by professional trainers</h1>
-            <a href="../common/sign-in.php" class='inline-block h-auto w-full text-center'><button class='bg-white tracking-wider rounded-full h-14 w-2/6 text-3xl font-medium hover:border-gray-400 text-gray-400 border-2 border-primary-400'>Get Started</button></a>
+            <h1 class='text-gray-600 text-2xl font-normal p-4 mb-10 md:p-0'>Want to stay athletic, healthy, join our events that are monitored by professional trainers</h1>
+            <a href="../common/sign-in.php" class='inline-block h-auto w-5/6 text-center md:w-full'><button class='bg-white tracking-wider rounded-full h-14 w-full md:w-2/6 text-3xl font-medium hover:border-gray-400 text-gray-400 border-2 border-primary-400'>Get Started</button></a>
         </div>
         <?php endif; ?>
     </main>

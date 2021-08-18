@@ -2,7 +2,7 @@
 
 <footer class='h-56 bg-gray-400 p-10'>
         <div class='mb-12'>
-            <ul class='flex justify-evenly w-full'>
+            <ul class='flex justify-evenly items-center flex-col w-full md:flex-row md:items-start'>
                 <li class='text-xl'><a href="#">Contact</a></li>
                 <li class='text-xl'><a href="#">FAQ</a></li>
                 <li class='text-xl'><a href="#">About</a></li>
