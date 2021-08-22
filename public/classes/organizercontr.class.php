@@ -40,8 +40,16 @@ class OrganizerContr extends Organizer{
         }
       
         return $num;
-      }
-    
+    }
+    // display registered customers in admin dashboard
+    public function getReservedUsers($organizerId){
+        $result = $this->organizerModel->GetMyReservedEvents($organizerId);
+        if($result){
+            return $result;
+        }else{
+            return false;
+        }
+    }
 }
 // addNewEvent
 $init = new OrganizerContr;

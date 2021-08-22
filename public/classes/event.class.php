@@ -68,9 +68,4 @@ class Event extends Dbh {
             return false;
         }
     }
-    // used in organizer dashboard
-    public function getReservedUsers(){
-        // SELECT user_id, username from reservation INNER JOIN user ON user.id = 3; 
-        // SELECT rt.*, ut.username, ut.id as ut_id, et.user_id, et.id from reservation rt INNER JOIN user ut ON rt.user_id = ut.id
-    }
 }
