@@ -83,7 +83,7 @@ include_once('../../helpers/session_helper.php');
             </section>
 
             <!-- events information -->
-            <section class='px-11'>
+            <section class='px-11 hidden'>
                 <div class='w-full h-auto grid grid-cols-2 gap-44'>
                     <!-- ongoing events -->
                     <div class='h-auto bg-gray-100 px-4 shadow-md'>
@@ -132,6 +132,19 @@ include_once('../../helpers/session_helper.php');
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+            <section class='h-auto px-11'>
+                <div class='w-full bg-white rounded-md p-4 shadow-md'>
+                    <div><h1 class='text-3xl text-gray-500 font-bold mb-10'>Registration</h1></div>
+                    <!-- list of registration -->
+                    <div class='flex justify-around mb-5 border-b-2 border-gray-200'>
+                        <h2 class='text-gray-600 font-medium text-2xl'><span><i class="fas fa-user text-gray-500 mr-4"></i></span>Luis</h2>
+                        <h2 class='text-green-600 font-medium text-2xl'> <span><i class="fas fa-check-double mr-4"></i></span>Delivered</h2>
+                        <h2 class='text-gray-600 font-medium text-2xl'>26 May</h2>
+                        <h2 class='text-gray-600 font-medium text-2xl'>Visa</h2>
+                        <h2 class='text-green-600 font-medium text-2xl'>SR: 223</h2>
                     </div>
                 </div>
             </section>

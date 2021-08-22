@@ -40,7 +40,7 @@ class Checkout extends Dbh{
     }
     // increment and dec available, register
     public function UpdateEventData(){
-        $sql = 'UPDATE event set available = available - 1, register = register + 1 where id = 1;'
+        $sql = 'UPDATE event set available = available - 1, register = register + 1 where id = 1 ';
         $this->db->query($sql);
     }
 }

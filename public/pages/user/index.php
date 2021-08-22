@@ -17,10 +17,14 @@ $result = $eventObj->ShowAllEvents();
 <body class='h-full font-body bg-gray-100'>
     <?php include('../common/header.php');
     if (!(session_status() == PHP_SESSION_NONE)) {
-        $reservedResult = $eventObj->ReservedEvents($_SESSION['usersId']);
         $reserved = array();
-        while($rows = $reservedResult->fetch_assoc()){
-            array_push($reserved, $rows['event_id']);
+        if(isset($_SESSION['usersId'])){
+            $reservedResult = $eventObj->ReservedEvents($_SESSION['usersId']);
+            if($reservedResult != false){
+                while($rows = $reservedResult->fetch_assoc()){
+                    array_push($reserved, $rows['event_id']);
+                }
+            }
         }
     }?>
     <main class='h-full w-full bg-gray-100 mb-24'>
@@ -41,12 +45,12 @@ $result = $eventObj->ShowAllEvents();
                 <?php while($row = $result->fetch_assoc()){?>
                     <a href="./event-detail.php?o=<?php echo $row['user_id']?>&e=<?php echo $row['id']?>" class='<?php if(in_array($row['id'], $reserved) || $row['available'] == '0'){ ?> pointer-events-none <?php }else{?> pointer-events-auto <?php }?>'>
                     <div class='card w-full h-auto hover:shadow-lg cursor-pointer relative'>
-                            <?php if(in_array($row['id'], $reserved)){ ?><div class='w-full h-full absolute opacity-40 bg-green-500'></div><?php 
+                            <?php if(in_array($row['id'], $reserved) && isset($_SESSION['usersId'])){ ?><div class='w-full h-full absolute opacity-40 bg-green-500'></div><?php 
                             }elseif($row['available'] == 0){ ?><div class='w-full h-full absolute opacity-40 bg-red-500'></div><?php }?>
                             <img src="<?php echo $row['img'] ?>" alt="couldn't load image" class='w-full object-cover'>
                             <div class='m-4'>
                                 <h2 class='mb-2 font-medium'><?php echo $row['name'];?></h2>
-                                <h2 class='mb-2 font-medium'><?php if(in_array($row['id'], $reserved)){ ?>Registered<?php }else{ echo $row['available'];?> available<?php }?></h2>
+                                <h2 class='mb-2 font-medium'><?php if(in_array($row['id'], $reserved) && isset($_SESSION['usersId'])){ ?>Registered<?php }else{ echo $row['available'];?> available<?php }?></h2>
                                 <h2 class='font-light'><?php echo $row['date'] ?></h2>
                             </div>
                             <div class='bg-primary-300 text-gray-700 text-xs uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2'>

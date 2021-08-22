@@ -24,8 +24,10 @@ $result = $eventObj->ShowAllEvents();
     if (!(session_status() == PHP_SESSION_NONE)) {
         $reservedResult = $eventObj->ReservedEvents($_SESSION['usersId']);
         $reserved = array();
-        while($rows = $reservedResult->fetch_assoc()){
-            array_push($reserved, $rows['event_id']);
+        if($reservedResult != false){
+            while($rows = $reservedResult->fetch_assoc()){
+                array_push($reserved, $rows['event_id']);
+            }
         }
     }
     ?>
