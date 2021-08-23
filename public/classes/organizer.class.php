@@ -58,4 +58,14 @@ class Organizer extends Dbh {
             return false;
         }
     }
+    // return the number of pepole who attendend organizer event
+    public function GetAttendentCustomers($organizerId){
+        $sql = 'SELECT COUNT(reservation.id) as total_attendance FROM `reservation` INNER JOIN event ON event_id = event.id WHERE event.user_id = '.$organizerId;
+        $result = $this->db->query($sql);
+        if($result->num_rows > 0){
+            return $result;
+        }else{
+            return false;
+        }
+    }
 }

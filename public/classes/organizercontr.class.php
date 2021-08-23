@@ -62,6 +62,17 @@ class OrganizerContr extends Organizer{
             return false;
         }
     }
+    //get the number of users who attendant organizer events
+    public function GetAttendentUsers($organizerId){
+        $result = $this->organizerModel->GetAttendentCustomers($organizerId);
+        if($result){
+            // get and return total revenue
+            $row = $result->fetch_assoc();
+            return $row['total_attendance'];
+        }else{
+            return false;
+        }
+    }
 }
 // addNewEvent
 $init = new OrganizerContr;
