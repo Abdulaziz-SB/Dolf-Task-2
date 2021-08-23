@@ -40,7 +40,17 @@ class Organizer extends Dbh {
     // used in organizer dashboard
     public function GetMyReservedEvents($organizerId){
         // SELECT rt.*, ut.username, ut.id as ut_id, et.user_id as org_id, et.id as et_id from reservation rt INNER JOIN user ut ON rt.user_id = ut.id INNER JOIN event et ON et.user_id = 7
-        $sql = 'SELECT rt.*, ut.username, ut.id as ut_id, et.user_id as org_id, et.id as et_id from reservation rt INNER JOIN user ut ON rt.user_id = ut.id INNER JOIN event et ON et.user_id = '.$organizerId;
+        $sql = 'SELECT rt.*, ut.username, ut.id as ut_id, et.user_id as org_id, et.id as et_id from reservation rt INNER JOIN user ut ON rt.user_id = ut.id INNER JOIN event et ON et.user_id = '.$organizerId.' GROUP BY rt.user_id';
+        $result = $this->db->query($sql);
+        if($result->num_rows > 0){
+            return $result;
+        }else{
+            return false;
+        }
+    }
+    // get organizer revenue
+    public function GetRevenue($organizerId){
+        $sql = 'SELECT SUM(reservation.price) as total_revenue, event.user_id FROM `reservation` INNER JOIN event ON reservation.event_id=event.id WHERE event.user_id = '.$organizerId;
         $result = $this->db->query($sql);
         if($result->num_rows > 0){
             return $result;

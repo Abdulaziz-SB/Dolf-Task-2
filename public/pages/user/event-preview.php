@@ -31,7 +31,7 @@
         <!-- seperator -->
         <div class='w-full h-1 mt-8 m-auto bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200'></div>
         <!-- checkout container -->
-        <div class='h-98 w-full flex justify-center items-center flex-col'>
+        <div class='h-auto mt-12 w-full flex justify-center items-center flex-col'>
             <div class='w-full text-center'><h2 class='text-2xl text-gray-600'>Payment method</h2></div>
             <div class='border-2 w-9/12 h-auto max-h-4/5 mt-5'>
                 <form action="../../classes/checkoutcontr.class.php" class='w-full h-full flex items-start justify-start flex-col' id='checkoutForm' method='post'>
@@ -62,7 +62,7 @@
                     </div>
                 </form>
             </div>
-            <div class='text-center'>
+            <div class='text-center mt-7'>
                 <button form='checkoutForm' id='registerOverviewBtn' type='submit' class='bg-primary-400 m-auto rounded-full h-14 w-80 text-xl hover:bg-primaryHover-200' onclick=CheckoutBtn()>Checkout</button>
             </div>
         </div>

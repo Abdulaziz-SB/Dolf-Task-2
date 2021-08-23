@@ -25,6 +25,7 @@ include_once('../../helpers/session_helper.php');
         $organizerObj = new OrganizerContr;
         $result = $organizerObj->showOrganizerEvents($_SESSION['usersId']);
         $resultCustomers = $organizerObj->getReservedUsers($_SESSION['usersId']);
+        $resultTotalRevenue = $organizerObj->GetOrganizerRevenue($_SESSION['usersId']);
     ?>
     <div class='flex h-full'>
         <!-- side bar -->
@@ -34,7 +35,7 @@ include_once('../../helpers/session_helper.php');
                <a href="#" id='eventIcon' onclick='NavigateSideBar(event)'><li class='text-2xl text-white sidebar-item hover:text-blue-100'><span class='mr-2'><i class="fas fa-star"></i></span>Events</li></a>
             </ul>
         </section>
-        <!-- main -->
+        <!-- dashboard main -->
         <main id='dashboardContainer' class='w-full h-full bg-gray-200 hidden'>
             <section class='w-full h-auto inline-block p-11'>
                 <div>
@@ -68,7 +69,7 @@ include_once('../../helpers/session_helper.php');
                     </div>
                     <div class='bg-white shadow-lg h-auto rounded-md p-5 flex justify-between hover:shadow-xl'>
                         <!-- attendance -->
-                        <div class='inline-block'><h2 class='text-3xl'>122K</h2><h2 class='text-xl font-light text-gray-600 mt-3'>Followers</h2></div>
+                        <div class='inline-block'><h2 class='text-3xl'><?php if($resultTotalRevenue != false) echo $organizerObj->thousandsCurrencyFormat($resultTotalRevenue); else echo '0'; ?></h2><h2 class='text-xl font-light text-gray-600 mt-3'>SAR Revenue</h2></div>
                             <div class='inline-block'>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="52" height="71.216" viewBox="0 0 52 71.216">
                                     <g id="followers-group" transform="translate(-390 -21)">
@@ -139,7 +140,7 @@ include_once('../../helpers/session_helper.php');
                     <div><h1 class='text-3xl text-gray-500 font-bold mb-10'>Registration</h1></div>
                     <!-- list of registration -->
                     <?php while($row = $resultCustomers->fetch_assoc()){?>
-                        <div class='flex justify-around mb-5 border-b-2 border-gray-200'>
+                        <div class='grid grid-cols-5 mb-5 border-b-2 border-gray-200'>
                             <h2 class='text-gray-600 font-medium text-2xl'><span><i class="fas fa-user text-gray-500 mr-4"></i></span><?php echo $row['username']; ?></h2>
                             <h2 class='text-green-600 font-medium text-2xl'> <span><i class="fas fa-check-double mr-4"></i></span>Delivered</h2>
                             <h2 class='text-gray-600 font-medium text-2xl'><?php echo $row['dates']; ?></h2>
@@ -150,7 +151,7 @@ include_once('../../helpers/session_helper.php');
                 </div>
             </section>
         </main>
-        <!-- Event container -->
+        <!-- Event main -->
         <main id='eventContainer' class='w-full h-full bg-gray-200 px-1 md:px-11'>
             <section class='w-full mt-20 flex justify-around mb-20'>
                 <div class='w-5/12 md:w-4/12 lg:w-3/12 flex justify-between'>

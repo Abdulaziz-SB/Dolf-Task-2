@@ -23,13 +23,14 @@ class OrganizerContr extends Organizer{
         $result = $this->organizerModel->OrganizerEvents($organizerId);
         return $result;
     }
+    // convert thousands to a currency
     public function thousandsCurrencyFormat($num) {
         if($num>1000) {
       
               $x = round($num);
               $x_number_format = number_format($x);
               $x_array = explode(',', $x_number_format);
-              $x_parts = array('k', 'm', 'b', 't');
+              $x_parts = array('K', 'M', 'B', 'T');
               $x_count_parts = count($x_array) - 1;
               $x_display = $x;
               $x_display = $x_array[0] . ((int) $x_array[1][0] !== 0 ? '.' . $x_array[1][0] : '');
@@ -46,6 +47,17 @@ class OrganizerContr extends Organizer{
         $result = $this->organizerModel->GetMyReservedEvents($organizerId);
         if($result){
             return $result;
+        }else{
+            return false;
+        }
+    }
+    // revenue display
+    public function GetOrganizerRevenue($organizerId){
+        $result = $this->organizerModel->GetRevenue($organizerId);
+        if($result){
+            // get and return total revenue
+            $row = $result->fetch_assoc();
+            return $row['total_revenue'];
         }else{
             return false;
         }

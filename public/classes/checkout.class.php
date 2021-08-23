@@ -17,7 +17,7 @@ class Checkout extends Dbh{
             return false;
         }else{
             // insert
-            mysqli_stmt_bind_param($stmt, 'iiiss', $data['eventId'], $data['usersId'], $data['price'], $data['paymentMethod'], $data['cardDate']);
+            mysqli_stmt_bind_param($stmt, 'iiiss', $data['eventId'], $data['usersId'], $data['price'], $data['paymentMethod'], date("Y-m-d H:i:s"));
             mysqli_stmt_execute($stmt);
             return true;
         }
