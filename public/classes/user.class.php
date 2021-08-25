@@ -19,7 +19,6 @@ class User extends Dbh {
         // sotre the result that we got from the database into $stmt
         mysqli_stmt_bind_param($stmt, "ss", $username, $email);
         mysqli_stmt_execute($stmt);
-        // mysqli_stmt_store_result($stmt);
         $result = mysqli_stmt_get_result($stmt);
         //check how many results we have inside $stmt
         $resultCheck = mysqli_stmt_num_rows($stmt);
