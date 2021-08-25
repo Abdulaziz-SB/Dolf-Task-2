@@ -26,6 +26,7 @@ include_once('../../helpers/session_helper.php');
         $result = $organizerObj->showOrganizerEvents($_SESSION['usersId']);
         $resultCustomers = $organizerObj->getReservedUsers($_SESSION['usersId']);
         $resultTotalRevenue = $organizerObj->GetOrganizerRevenue($_SESSION['usersId']);
+        $resultTotalAttendance = $organizerObj->GetAttendentUsers($_SESSION['usersId']);
     ?>
     <div class='flex h-full'>
         <!-- side bar -->
@@ -39,13 +40,13 @@ include_once('../../helpers/session_helper.php');
         <main id='dashboardContainer' class='w-full h-full bg-gray-200 hidden'>
             <section class='w-full h-auto inline-block p-11'>
                 <div>
-                    <h1 class='h-20 w-full text-3xl text-gray-600 font-medium'><?php echo $_SESSION['usersName']; ?> Dashboard</h1>
+                    <h1 class='h-20 w-full text-3xl text-gray-600 font-bold'><?php echo $_SESSION['usersName']; ?> Dashboard</h1>
                 </div>
                 <!-- summary -->
                 <div class='w-full h-auto grid grid-cols-3 gap-10 mt-20'>
                     <div class='bg-white shadow-lg h-auto rounded-md p-5 flex justify-between hover:shadow-xl'>
                         <!-- attendance -->
-                        <div class='inline-block'><h2 class='text-3xl'>72K</h2><h2 class='text-xl font-light text-gray-600 mt-3'>Attended your event</h2></div>
+                        <div class='inline-block'><h2 class='text-3xl'><?php if($resultTotalAttendance != false) echo $organizerObj->thousandsCurrencyFormat($resultTotalAttendance); else echo '0'; ?></h2><h2 class='text-xl font-light text-gray-600 mt-3'>Attended your event</h2></div>
                         <div class='inline-block'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="52" height="71.216" viewBox="0 0 52 71.216">
                                 <g id="attendance-group" data-name="Group 15" transform="translate(-380 -21)">
@@ -140,7 +141,7 @@ include_once('../../helpers/session_helper.php');
                     <div><h1 class='text-3xl text-gray-500 font-bold mb-10'>Registration</h1></div>
                     <!-- list of registration -->
                     <?php while($row = $resultCustomers->fetch_assoc()){?>
-                        <div class='grid grid-cols-5 mb-5 border-b-2 border-gray-200'>
+                        <div class='grid grid-cols-5 text-center mb-5 border-b-2 border-gray-200'>
                             <h2 class='text-gray-600 font-medium text-2xl'><span><i class="fas fa-user text-gray-500 mr-4"></i></span><?php echo $row['username']; ?></h2>
                             <h2 class='text-green-600 font-medium text-2xl'> <span><i class="fas fa-check-double mr-4"></i></span>Delivered</h2>
                             <h2 class='text-gray-600 font-medium text-2xl'><?php echo $row['dates']; ?></h2>
