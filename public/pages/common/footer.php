@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
 
-<footer class='h-56 bg-gray-400 p-10'>
-        <div class='mb-12'>
+<footer class='h-56 bg-gray-400 p-4 md:p-10'>
+        <div class='mb-4 md:mb-12'>
             <ul class='flex justify-evenly items-center flex-col w-full md:flex-row md:items-start'>
                 <li class='text-xl'><a href="#">Contact</a></li>
                 <li class='text-xl'><a href="#">FAQ</a></li>

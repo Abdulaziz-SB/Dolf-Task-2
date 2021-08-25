@@ -37,17 +37,17 @@ $organizerRow = $eventObj->Organizer($_GET['o']);
     <div id='pageOverlay' class='absolute w-full h-full bg-gray-900 opacity-20 z-30 hidden'></div>
     <?php include('../common/header.php')?>
     <!-- event name-img -->
-    <div id ='eventUpperContainer' class='h-96 relative overflow-hidden flex mb-20'>
+    <div id ='eventUpperContainer' class='h-80 md:h-96 relative overflow-hidden flex md:mb-20'>
         <div class='bg-primary-100 h-64 absolute w-full'></div>
         <!-- event image left-44 top-6 -->
-        <div class='z-20 h-96 w-1/4 mt-10 ml-48'>
-            <img src="<?php echo $eventRow['img'];?>" alt="couldn't load image" class='rounded-md'>
+        <div class='z-20 h-auto w-1/2 md:h-96 md:w-1/4 mt-4 ml-4 mr-4 md:mt-10 md:ml-48'>
+            <img src="<?php echo $eventRow['img'];?>" alt="couldn't load image" class='h-40 md:h-auto rounded-md'>
         </div>
         <!-- title -->
-        <div class='z-20 ml-24 mt-10'>
-            <h2 class='font-light text-3xl text-gray-500 mb-5'>Event</h2>
-            <h1 class='text-5xl text-primary-500 mb-7'><?php echo $eventRow['name'];?></h1>
-            <button id='registerEventBtn' class='bg-primary-400 rounded-full h-14 w-64 text-xl hover:bg-primaryHover-200' onclick='RegisterEvent()'>Register</button>
+        <div class='z-20 mt-4 md:ml-24 md:mt-10'>
+            <h2 class='font-light text-2xl md:text-3xl text-gray-500 mb-5'>Event</h2>
+            <h1 class='text-3xl md:text-5xl text-primary-500 mb-7'><?php echo $eventRow['name'];?></h1>
+            <button id='registerEventBtn' class='bg-primary-400 rounded-full h-12 w-28 md:h-14 md:w-64 text-xl hover:bg-primaryHover-200' onclick='RegisterEvent()'>Register</button>
         </div>
         <!-- blob shape -->
         <div>
@@ -67,35 +67,35 @@ $organizerRow = $eventObj->Organizer($_GET['o']);
         <!-- Event description -->
         <div class='h-20 w-full'>
             <ul class='flex justify-between w-full items-center'>
-                <li class='text-gray-600 text-xl'>
-                    <svg class='inline-block mr-2' xmlns="http://www.w3.org/2000/svg" width="56.786" height="39.75" viewBox="0 0 56.786 39.75">
+                <li class='text-gray-600 text-sm md:text-xl'>
+                    <svg class='inline-block mr-2 w-6 h-6 p-1 md:w-14 md:h-14' xmlns="http://www.w3.org/2000/svg" width="56.786" height="39.75" viewBox="0 0 56.786 39.75">
                         <path id="Icon_awesome-users" data-name="Icon awesome-users" d="M8.518,19.286a5.679,5.679,0,1,0-5.679-5.679A5.684,5.684,0,0,0,8.518,19.286Zm39.75,0a5.679,5.679,0,1,0-5.679-5.679A5.684,5.684,0,0,0,48.268,19.286Zm2.839,2.839H45.429a5.662,5.662,0,0,0-4,1.65,12.978,12.978,0,0,1,6.663,9.707h5.856a2.836,2.836,0,0,0,2.839-2.839V27.8A5.684,5.684,0,0,0,51.107,22.125Zm-22.714,0a9.938,9.938,0,1,0-9.938-9.938A9.932,9.932,0,0,0,28.393,22.125Zm6.814,2.839h-.736a13.72,13.72,0,0,1-12.156,0h-.736A10.224,10.224,0,0,0,11.357,35.186v2.555A4.26,4.26,0,0,0,15.616,42H41.17a4.26,4.26,0,0,0,4.259-4.259V35.186A10.224,10.224,0,0,0,35.207,24.964ZM15.359,23.775a5.662,5.662,0,0,0-4-1.65H5.679A5.684,5.684,0,0,0,0,27.8v2.839a2.836,2.836,0,0,0,2.839,2.839H8.686A13.011,13.011,0,0,1,15.359,23.775Z" transform="translate(0 -2.25)" fill="gray"/>
                     </svg>
                     <?php echo $eventRow['register'];?> registered
                 </li>
-                <li class='border-l-2 border-gray-400 text-gray-600 text-xl'>
-                    <svg class='inline-block ml-2 mr-2' xmlns="http://www.w3.org/2000/svg" width="56.786" height="39.75" viewBox="0 0 56.786 39.75">
+                <li class='border-l-2 border-gray-400 text-gray-600 p-1 text-sm md:text-xl'>
+                    <svg class='inline-block ml-2 mr-2 w-6 h-6 md:w-14 md:h-14' xmlns="http://www.w3.org/2000/svg" width="56.786" height="39.75" viewBox="0 0 56.786 39.75">
                         <path id="Icon_awesome-users" data-name="Icon awesome-users" d="M8.518,19.286a5.679,5.679,0,1,0-5.679-5.679A5.684,5.684,0,0,0,8.518,19.286Zm39.75,0a5.679,5.679,0,1,0-5.679-5.679A5.684,5.684,0,0,0,48.268,19.286Zm2.839,2.839H45.429a5.662,5.662,0,0,0-4,1.65,12.978,12.978,0,0,1,6.663,9.707h5.856a2.836,2.836,0,0,0,2.839-2.839V27.8A5.684,5.684,0,0,0,51.107,22.125Zm-22.714,0a9.938,9.938,0,1,0-9.938-9.938A9.932,9.932,0,0,0,28.393,22.125Zm6.814,2.839h-.736a13.72,13.72,0,0,1-12.156,0h-.736A10.224,10.224,0,0,0,11.357,35.186v2.555A4.26,4.26,0,0,0,15.616,42H41.17a4.26,4.26,0,0,0,4.259-4.259V35.186A10.224,10.224,0,0,0,35.207,24.964ZM15.359,23.775a5.662,5.662,0,0,0-4-1.65H5.679A5.684,5.684,0,0,0,0,27.8v2.839a2.836,2.836,0,0,0,2.839,2.839H8.686A13.011,13.011,0,0,1,15.359,23.775Z" transform="translate(0 -2.25)" fill="gray"/>
                     </svg>
                     <?php echo $eventRow['available'];?> available
                 </li>
-                <li class='border-l-2 border-gray-400 text-gray-600 text-xl'>
-                <svg class='inline-block ml-2 mr-2' xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
-                    <path id="Icon_awesome-user-alt" data-name="Icon awesome-user-alt" d="M18,20.25A10.125,10.125,0,1,0,7.875,10.125,10.128,10.128,0,0,0,18,20.25Zm9,2.25H23.126a12.24,12.24,0,0,1-10.252,0H9a9,9,0,0,0-9,9v1.125A3.376,3.376,0,0,0,3.375,36h29.25A3.376,3.376,0,0,0,36,32.625V31.5A9,9,0,0,0,27,22.5Z" fill="gray"/>
-                </svg>
+                <li class='border-l-2 border-gray-400 text-gray-600 p-1 text-sm md:text-xl'>
+                    <svg class='inline-block ml-2 mr-2 w-4 h-4 md:w-14 md:h-14' xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+                        <path id="Icon_awesome-user-alt" data-name="Icon awesome-user-alt" d="M18,20.25A10.125,10.125,0,1,0,7.875,10.125,10.128,10.128,0,0,0,18,20.25Zm9,2.25H23.126a12.24,12.24,0,0,1-10.252,0H9a9,9,0,0,0-9,9v1.125A3.376,3.376,0,0,0,3.375,36h29.25A3.376,3.376,0,0,0,36,32.625V31.5A9,9,0,0,0,27,22.5Z" fill="gray"/>
+                    </svg>
                     <?php echo $organizerRow['username'];?>
                 </li>
-                <li class='border-l-2 border-gray-400 text-gray-600 text-xl'>
-                <svg class='inline-block ml-2 mr-2' xmlns="http://www.w3.org/2000/svg" width="45.001" height="31.5" viewBox="0 0 45.001 31.5">
-                    <path id="Icon_awesome-money-bill-wave" data-name="Icon awesome-money-bill-wave" d="M43.675,3.829A20.822,20.822,0,0,0,35.49,2.25c-8.66,0-17.32,4.383-25.98,4.383A21.333,21.333,0,0,1,3,5.669a2.4,2.4,0,0,0-.728-.114A2.237,2.237,0,0,0,0,7.791V30.1A2.236,2.236,0,0,0,1.325,32.17,20.81,20.81,0,0,0,9.51,33.75c8.66,0,17.321-4.384,25.981-4.384a21.333,21.333,0,0,1,6.514.965,2.4,2.4,0,0,0,.728.114A2.237,2.237,0,0,0,45,28.208V5.9a2.239,2.239,0,0,0-1.325-2.072ZM3.375,9.3a24.469,24.469,0,0,0,4.41.628,4.505,4.505,0,0,1-4.41,3.624Zm0,20.039v-3.36a4.5,4.5,0,0,1,4.48,4.317A16.986,16.986,0,0,1,3.375,29.336ZM22.5,24.75c-3.107,0-5.625-3.023-5.625-6.75s2.519-6.75,5.625-6.75,5.625,3.022,5.625,6.75S25.606,24.75,22.5,24.75ZM41.625,26.7a24.175,24.175,0,0,0-3.819-.593,4.491,4.491,0,0,1,3.819-3.465Zm0-16.6A4.491,4.491,0,0,1,37.7,5.774a16.9,16.9,0,0,1,3.924.89Z" transform="translate(0 -2.25)" fill="gray"/>
-                </svg>
-                <?php echo $eventRow['price'];?> SR
+                <li class='border-l-2 border-gray-400 text-gray-600 p-1 text-sm md:text-xl'>
+                    <svg class='inline-block ml-2 mr-2 w-4 h-4 md:w-14 md:h-14' xmlns="http://www.w3.org/2000/svg" width="45.001" height="31.5" viewBox="0 0 45.001 31.5">
+                        <path id="Icon_awesome-money-bill-wave" data-name="Icon awesome-money-bill-wave" d="M43.675,3.829A20.822,20.822,0,0,0,35.49,2.25c-8.66,0-17.32,4.383-25.98,4.383A21.333,21.333,0,0,1,3,5.669a2.4,2.4,0,0,0-.728-.114A2.237,2.237,0,0,0,0,7.791V30.1A2.236,2.236,0,0,0,1.325,32.17,20.81,20.81,0,0,0,9.51,33.75c8.66,0,17.321-4.384,25.981-4.384a21.333,21.333,0,0,1,6.514.965,2.4,2.4,0,0,0,.728.114A2.237,2.237,0,0,0,45,28.208V5.9a2.239,2.239,0,0,0-1.325-2.072ZM3.375,9.3a24.469,24.469,0,0,0,4.41.628,4.505,4.505,0,0,1-4.41,3.624Zm0,20.039v-3.36a4.5,4.5,0,0,1,4.48,4.317A16.986,16.986,0,0,1,3.375,29.336ZM22.5,24.75c-3.107,0-5.625-3.023-5.625-6.75s2.519-6.75,5.625-6.75,5.625,3.022,5.625,6.75S25.606,24.75,22.5,24.75ZM41.625,26.7a24.175,24.175,0,0,0-3.819-.593,4.491,4.491,0,0,1,3.819-3.465Zm0-16.6A4.491,4.491,0,0,1,37.7,5.774a16.9,16.9,0,0,1,3.924.89Z" transform="translate(0 -2.25)" fill="gray"/>
+                    </svg>
+                    <?php echo $eventRow['price'];?> SR
                 </li>
-                <li class='border-l-2 border-gray-400 text-gray-600 text-xl'>
-                <svg class='inline-block ml-2 mr-2' xmlns="http://www.w3.org/2000/svg" width="39.488" height="43.875" viewBox="0 0 39.488 43.875">
-                    <path id="Icon_material-date-range" data-name="Icon material-date-range" d="M17.663,22.744H13.275v4.387h4.388Zm8.775,0H22.05v4.387h4.387Zm8.775,0H30.825v4.387h4.388ZM39.6,7.388H37.406V3H33.019V7.388H15.469V3H11.081V7.388H8.888a4.368,4.368,0,0,0-4.366,4.387L4.5,42.488a4.386,4.386,0,0,0,4.388,4.387H39.6a4.4,4.4,0,0,0,4.388-4.387V11.775A4.4,4.4,0,0,0,39.6,7.388Zm0,35.1H8.888V18.356H39.6Z" transform="translate(-4.5 -3)" fill="gray"/>
-                </svg>
-                <?php echo $eventRow['date'];?>
+                <li class='border-l-2 border-gray-400 text-gray-600 p-1 text-xs md:text-xl'>
+                    <svg class=' ml-2 mr-2 w-4 h-4 hidden md:inline-block md:w-14 md:h-14' xmlns="http://www.w3.org/2000/svg" width="39.488" height="43.875" viewBox="0 0 39.488 43.875">
+                        <path id="Icon_material-date-range" data-name="Icon material-date-range" d="M17.663,22.744H13.275v4.387h4.388Zm8.775,0H22.05v4.387h4.387Zm8.775,0H30.825v4.387h4.388ZM39.6,7.388H37.406V3H33.019V7.388H15.469V3H11.081V7.388H8.888a4.368,4.368,0,0,0-4.366,4.387L4.5,42.488a4.386,4.386,0,0,0,4.388,4.387H39.6a4.4,4.4,0,0,0,4.388-4.387V11.775A4.4,4.4,0,0,0,39.6,7.388Zm0,35.1H8.888V18.356H39.6Z" transform="translate(-4.5 -3)" fill="gray"/>
+                    </svg>
+                    <?php echo $eventRow['date'];?>
                 </li>
             </ul>
         </div>

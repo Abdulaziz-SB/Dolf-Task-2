@@ -2,6 +2,7 @@
 include '../../includes/autoload.inc.php';
 $eventObj = new EventContr;
 $result = $eventObj->ShowAllEvents();
+$result2 = $eventObj->ShowAllEvents();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,7 +60,7 @@ $result = $eventObj->ShowAllEvents();
                             </div>
                         </div>
                     </a>
-                    <?php }?>
+                <?php }?>
             </div>
         </section>
         <!-- <div class='w-full h-80'>
@@ -120,64 +121,30 @@ $result = $eventObj->ShowAllEvents();
             </div>
         </section>
         <!-- more events -->
-        <section class='h-full p-28'>
+        <section class='h-full p-4 md:p-28'>
             <div class='mt-5 mb-10'>
                 <h1 class='text-4xl text-gray-700 font-light'>More events</h1>
             </div>
             <!-- Cards -->
-            <div class='grid grid-cols-4 gap-10 mb-6'>
-                <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
-                    <img src="../../res/img/ball.jpg" alt="couldn't load image" class='w-full object-cover'>
-                    <div class='m-4'>
-                        <h2 class='mb-2 font-medium'>Football</h2>
-                        <h2 class='mb-2 font-medium'>Roberto luis</h2>
-                        <h2 class='mb-2 font-medium'>56 registered</h2>
-                        <h2 class='font-light'>9:00pm - 10:00pm 21/9/2021</h2>
-                    </div>
-                    <div class='bg-primary-300 text-gray-700 text-xs uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2'>
-                        <svg class="w-6 h-6 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        <span>75 SR</span>
-                    </div>
-                </div>
-                <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
-                    <img src="../../res/img/basket.jpg" alt="couldn't load image" class='w-full object-cover'>
-                    <div class='m-4'>
-                        <h2 class='mb-2 font-medium'>Basketball</h2>
-                        <h2 class='mb-2 font-medium'>Luis</h2>
-                        <h2 class='mb-2 font-medium'>36 registered</h2>
-                        <h2 class='font-light'>10:00pm - 12:00pm 21/9/2021</h2>
-                    </div>
-                    <div class='bg-primary-300 text-gray-700 text-xs uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2'>
-                        <svg class="w-6 h-6 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        <span>50 SR</span>
-                    </div>
-                </div>
-                <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
-                    <img src="../../res/img/ba.jpg" alt="couldn't load image" class='w-full object-cover'>
-                    <div class='m-4'>
-                        <h2 class='mb-2 font-medium'>Football</h2>
-                        <h2 class='mb-2 font-medium'>Roberto sanchez</h2>
-                        <h2 class='mb-2 font-medium'>46 registered</h2>
-                        <h2 class='font-light'>9:00pm - 10:00pm 27/9/2021</h2>
-                    </div>
-                    <div class='bg-primary-300 text-gray-700 text-xs uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2'>
-                        <svg class="w-6 h-6 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        <span>125 SR</span>
-                    </div>
-                </div>
-                <div class='card w-full h-auto hover:shadow-lg cursor-pointer'>
-                    <img src="../../res/img/football-cover.jpg" alt="couldn't load image" class='w-full object-cover'>
-                    <div class='m-4'>
-                        <h2 class='mb-2 font-medium'>Football</h2>
-                        <h2 class='mb-2 font-medium'>luis silva</h2>
-                        <h2 class='mb-2 font-medium'>90 registered</h2>
-                        <h2 class='font-light'>7:00pm - 9:00pm 12/9/2021</h2>
-                    </div>
-                    <div class='bg-primary-300 text-gray-700 text-xs uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2'>
-                        <svg class="w-6 h-6 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        <span>25 SR</span>
-                    </div>
-                </div>
+            <div class='grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-10 mb-6'>
+                <?php while($row = $result2->fetch_assoc()){?>
+                    <a href="./event-detail.php?o=<?php echo $row['user_id']?>&e=<?php echo $row['id']?>" class='<?php if(in_array($row['id'], $reserved) || $row['available'] == '0'){ ?> pointer-events-none <?php }else{?> pointer-events-auto <?php }?>'>
+                    <div class='card w-full h-auto hover:shadow-lg cursor-pointer relative'>
+                            <?php if(in_array($row['id'], $reserved) && isset($_SESSION['usersId'])){ ?><div class='w-full h-full absolute opacity-40 bg-green-500'></div><?php 
+                            }elseif($row['available'] == 0){ ?><div class='w-full h-full absolute opacity-40 bg-red-500'></div><?php }?>
+                            <img src="<?php echo $row['img'] ?>" alt="couldn't load image" class='w-full object-cover'>
+                            <div class='m-4'>
+                                <h2 class='mb-2 font-medium'><?php echo $row['name'];?></h2>
+                                <h2 class='mb-2 font-medium'><?php if(in_array($row['id'], $reserved) && isset($_SESSION['usersId'])){ ?>Registered<?php }else{ echo $row['available'];?> available<?php }?></h2>
+                                <h2 class='font-light'><?php echo $row['date'] ?></h2>
+                            </div>
+                            <div class='bg-primary-300 text-gray-700 text-xs uppercase font-bold rounded-full p-2 absolute top-0 ml-2 mt-2'>
+                                <svg class="w-6 h-6 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                                <span><?php echo $row['price'] ?> SR</span>
+                            </div>
+                        </div>
+                    </a>
+                <?php }?>
             </div>
         </section>
         <?php if(!isset($_SESSION['usersId'])):?>
