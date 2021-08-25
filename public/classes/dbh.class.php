@@ -8,8 +8,8 @@ class Dbh {
 
     protected function connect(){
         $this->servername = 'localhost';
-        $this->username = 'root';
-        $this->pwd = '';
+        $this->username = 'root'; // Cliparo
+        $this->pwd = '';// 778899Cliparo
         $this->dbname = 'cliparo';
 
         $conn = new mysqli($this->servername, $this->username, $this->pwd, $this->dbname);

@@ -23,10 +23,16 @@ include_once('../../helpers/session_helper.php');
     <?php include('../common/header.php');
         include_once '../../includes/autoload.inc.php';
         $organizerObj = new OrganizerContr;
-        $result = $organizerObj->showOrganizerEvents($_SESSION['usersId']);
-        $resultCustomers = $organizerObj->getReservedUsers($_SESSION['usersId']);
-        $resultTotalRevenue = $organizerObj->GetOrganizerRevenue($_SESSION['usersId']);
-        $resultTotalAttendance = $organizerObj->GetAttendentUsers($_SESSION['usersId']);
+        try{
+            if(isset($_SESSION['usersId'])){
+                $result = $organizerObj->showOrganizerEvents($_SESSION['usersId']);
+                $resultCustomers = $organizerObj->getReservedUsers($_SESSION['usersId']);
+                $resultTotalRevenue = $organizerObj->GetOrganizerRevenue($_SESSION['usersId']);
+                $resultTotalAttendance = $organizerObj->GetAttendentUsers($_SESSION['usersId']);
+            }
+        }catch(Exception $e){
+            echo $e->getMessage();
+        }
     ?>
     <div class='flex h-full'>
         <!-- side bar -->
@@ -84,63 +90,11 @@ include_once('../../helpers/session_helper.php');
             </section>
 
             <!-- events information img -->
-            <section class='px-11 hidden'>
-                <div class='w-full h-auto grid grid-cols-2 gap-44'>
-                    <!-- ongoing events -->
-                    <div class='h-auto bg-gray-100 px-4 shadow-md'>
-                        <h1 class='text-gray-500 text-2xl p-4 rounded-md'>Ongoing Events <span><i class="fas fa-hourglass-start"></i></span></h1>
-                        <div class='w-full h-auto flex flex-wrap flex-row justify-between mb-6'>
-                            <div class='card w-5/12'>
-                                <img src="../../res/img/ball.jpg" alt="couldn't load image" class='w-full object-cover'>
-                                <div class='m-4'>
-                                    <h2 class='mb-2 font-medium'>Football</h2>
-                                    <h2 class='mb-2 font-medium'>Roberto luis</h2>
-                                    <h2 class='mb-2 font-medium'>56 registered</h2>
-                                    <h2 class='font-light'>9:00pm - 10:00pm 21/9/2021</h2>
-                                </div>
-                            </div>
-                            <div class='card w-5/12'>
-                                <img src="../../res/img/ball.jpg" alt="couldn't load image" class='w-full object-cover'>
-                                <div class='m-4'>
-                                    <h2 class='mb-2 font-medium'>Football</h2>
-                                    <h2 class='mb-2 font-medium'>Roberto luis</h2>
-                                    <h2 class='mb-2 font-medium'>56 registered</h2>
-                                    <h2 class='font-light'>9:00pm - 10:00pm 21/9/2021</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Ended events -->
-                    <div class='h-auto bg-gray-100 px-4 shadow-md'>
-                        <h1 class='text-gray-500 text-2xl p-4 rounded-md'>Ended Events <span><i class="fas fa-hourglass-end"></i></span></h1>
-                        <div class='w-full h-auto flex flex-wrap flex-row justify-between mb-6'>
-                            <div class='card w-5/12'>
-                                <img src="../../res/img/ball.jpg" alt="couldn't load image" class='w-full object-cover'>
-                                <div class='m-4'>
-                                    <h2 class='mb-2 font-medium'>Football</h2>
-                                    <h2 class='mb-2 font-medium'>Roberto luis</h2>
-                                    <h2 class='mb-2 font-medium'>56 registered</h2>
-                                    <h2 class='font-light'>9:00pm - 10:00pm 21/9/2021</h2>
-                                </div>
-                            </div>
-                            <div class='card w-5/12'>
-                                <img src="../../res/img/ball.jpg" alt="couldn't load image" class='w-full object-cover'>
-                                <div class='m-4'>
-                                    <h2 class='mb-2 font-medium'>Football</h2>
-                                    <h2 class='mb-2 font-medium'>Roberto luis</h2>
-                                    <h2 class='mb-2 font-medium'>56 registered</h2>
-                                    <h2 class='font-light'>9:00pm - 10:00pm 21/9/2021</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
             <section class='h-auto px-11'>
                 <div class='w-full bg-white rounded-md p-4 shadow-md'>
                     <div><h1 class='text-3xl text-gray-500 font-bold mb-10'>Registration</h1></div>
                     <!-- list of registration -->
-                    <?php while($row = $resultCustomers->fetch_assoc()){?>
+                    <?php if($resultCustomers != false){ while($row = $resultCustomers->fetch_assoc()){?>
                         <div class='grid grid-cols-5 text-center mb-5 border-b-2 border-gray-200'>
                             <h2 class='text-gray-600 font-medium text-2xl'><span><i class="fas fa-user text-gray-500 mr-4"></i></span><?php echo $row['username']; ?></h2>
                             <h2 class='text-green-600 font-medium text-2xl'> <span><i class="fas fa-check-double mr-4"></i></span>Delivered</h2>
@@ -148,7 +102,9 @@ include_once('../../helpers/session_helper.php');
                             <h2 class='text-gray-600 font-medium text-2xl'><?php echo $row['payment_method']; ?></h2>
                             <h2 class='text-green-600 font-medium text-2xl'>SR: <?php echo $row['price']; ?></h2>
                         </div>
-                    <?php }?>
+                    <?php } }else{?>
+                        <div><h1 class='text-gray-600 text-2xl'>There's no users registered</h1></div>
+                        <?php }?>
                 </div>
             </section>
         </main>
@@ -188,7 +144,6 @@ include_once('../../helpers/session_helper.php');
                             <th class='font-normal text-base md:text-lg'>Event</th>
                             <th class='font-normal text-base md:text-lg'>Date</th>
                             <th class='font-normal text-base md:text-lg'>Registered</th>
-                            <th></th>
                             <th></th>
                         </tr>
                     </thead>

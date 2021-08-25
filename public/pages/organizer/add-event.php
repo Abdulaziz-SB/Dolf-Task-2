@@ -25,6 +25,9 @@
                             <option value="Football">Football</option>
                             <option value="Basketball">Basketball</option>
                             <option value="Baseball">Baseball</option>
+                            <option value="Volleyball">Volleyball</option>
+                            <option value="Swimming">Swimming</option>
+                            <option value="Tennis">Tennis</option>
                         </select>
                     </div>
                     <div class='w-3/12'>

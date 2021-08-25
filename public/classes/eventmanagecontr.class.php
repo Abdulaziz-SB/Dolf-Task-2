@@ -30,7 +30,7 @@ class EventManageContr extends EventManage{
             if($fileError === 0){
                 if($fileSize < 1300000){
                     $fileNameNew = uniqid('', true).'.'.$fileActualExt;
-                    $fileDestination = '../res/img/Football/'.$fileNameNew;
+                    $fileDestination = '../res/img/'.$postFileType.'/'.$fileNameNew;
                     move_uploaded_file($fileTmpName, $fileDestination);
                     return '/Dolf-Task-2/public/res/img/'.$postFileType.'/'.$fileNameNew;
                 }else{
