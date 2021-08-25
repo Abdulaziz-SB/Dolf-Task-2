@@ -59,12 +59,10 @@ class EventManageContr extends EventManage{
         ];
         // pass the type name
         $data['img'] = $this->processFile($data['type']);
-        // convert type name to id
+        // convert type name to id(index)
         $eventIndex = $this->eventManage->getEventTypeId($data['type']);
         $data['type'] = $eventIndex['id'];
-        // /Dolf-Task-2/public/res/img/1/611afa854b17f1.30864927.jpg
-        // print_r( $eventIndex);
-        // echo '<br>';
+
         if($this->eventManage->AddNewEvent($data)){
             redirect('../pages/organizer/index.php?st=added');
         }else{

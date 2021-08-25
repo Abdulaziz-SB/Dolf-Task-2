@@ -1,6 +1,5 @@
 <?php
 include_once './dbh.class.php';
-// include_once './organizer.class.php';
 include_once '../helpers/session_helper.php';
 class EventManage extends Dbh{
     private $db;

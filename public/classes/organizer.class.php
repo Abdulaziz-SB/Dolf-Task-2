@@ -1,11 +1,6 @@
 <?php
 // organizer model
 // require_once './dbh.class.php';
-// try {
-    // include_once './dbh.class.php';
-// }catch (Exception $e){
-    
-// }
 
 class Organizer extends Dbh {
     private $db;
@@ -39,7 +34,6 @@ class Organizer extends Dbh {
     }
     // used in organizer dashboard
     public function GetMyReservedEvents($organizerId){
-        // SELECT rt.*, ut.username, ut.id as ut_id, et.user_id as org_id, et.id as et_id from reservation rt INNER JOIN user ut ON rt.user_id = ut.id INNER JOIN event et ON et.user_id = 7
         $sql = 'SELECT rt.*, ut.username, ut.id as ut_id, et.user_id as org_id, et.id as et_id from reservation rt INNER JOIN user ut ON rt.user_id = ut.id INNER JOIN event et ON et.user_id = '.$organizerId.' GROUP BY rt.user_id';
         $result = $this->db->query($sql);
         if($result->num_rows > 0){

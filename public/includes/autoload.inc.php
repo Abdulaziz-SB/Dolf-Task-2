@@ -12,8 +12,5 @@ function myAutoLoader($className){
     }
     $extension = '.class.php';
 
-    // if(!file_exists($fullPath)){
-    //     return false;
-    // }
     include_once $path . $className . $extension;
 }

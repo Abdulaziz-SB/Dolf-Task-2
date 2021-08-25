@@ -22,7 +22,7 @@ class UserContr extends User{
             'userType' => trim($_POST['userType'])
         ];
 
-        // if(!preg_match("/^[a-zA-Z0-9]*$/", $data['user']))
+        // if(!preg_match("/^[a-zA-Z0-9]*$/", $data['user'])) u can check username string
 
         // validate email
         if(!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {

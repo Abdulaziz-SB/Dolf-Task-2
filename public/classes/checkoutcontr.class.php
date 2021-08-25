@@ -44,9 +44,6 @@ $init = new CheckoutContr;
 echo 'hii';
 // Ensure that user is sending a post request
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // if(!isset($_GET['p']) || !isset($_GET['e']) || !isset($_SESSION['usersId'])){
-    //     redirect('../pages/user/index.php?t=empty');
-    // }else{
     switch($_POST['checkoutType']){
         case 'checkout':
             $init->payment();
@@ -54,6 +51,5 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         default:
         redirect('../pages/user/index.php?t=default');
         }
-    // }
 }
 ?>

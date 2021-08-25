@@ -4,13 +4,6 @@
 if(!isset($_SESSION['usersId'])){
     session_start();
 }
-// include_once './organizer.class.php';
-// include_once '../helpers/session_helper.php';
-// error_reporting(E_ERROR | E_PARSE);
-// try {
-// }catch (Exception $e){
-
-// }
 
 class OrganizerContr extends Organizer{
     private $organizerModel;

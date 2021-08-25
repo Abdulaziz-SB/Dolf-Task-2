@@ -3,7 +3,7 @@
 if(!isset($_SESSION)){
     session_start();
 }
-
+// this function to display error or success messages
 function flash($name = '', $message = '', $class = 'text-center p-2 text-red-600'){
     // if name and message not empty and we can't find session, store message
     if(!empty($name)){

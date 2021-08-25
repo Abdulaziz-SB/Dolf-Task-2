@@ -1,7 +1,5 @@
 <?php
 
-// require_once './dbh.class.php';
-// require_once('../../classes/dbh.class.php');
 // event model
 class Event extends Dbh {
     private $db;
